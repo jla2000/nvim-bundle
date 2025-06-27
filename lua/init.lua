@@ -12,7 +12,6 @@ vim.diagnostic.config({
 })
 
 vim.keymap.set("n", "<esc>", "<cmd>nohl<cr><esc>")
-vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>")
 vim.keymap.set("n", "<tab>", "<cmd>bn<cr>")
 vim.keymap.set("n", "<s-tab>", "<cmd>bp<cr>")
 
@@ -90,6 +89,40 @@ require("lz.n").load({
     after = function()
       require("blink.cmp").setup()
     end,
+  },
+  {
+    "snacks.nvim",
+    lazy = false,
+    after = function()
+      require("snacks").setup({
+        bigfile = { enabled = true },
+        bufdelete = { enabled = true },
+        input = { enabled = true },
+        picker = { enabled = true },
+        notifier = { enabled = true },
+        quickfile = { enabled = true },
+        lazygit = { enabled = true },
+      })
+    end,
+    keys = {
+      {
+        "<leader>gg",
+        function()
+          local git_folder = vim.fn.finddir(".git", ".;")
+          local root_folder = vim.fn.fnamemodify(git_folder, ":h")
+
+          Snacks.lazygit({
+            args = { "-p", root_folder },
+          })
+        end,
+      },
+      {
+        "<leader>bd",
+        function()
+          Snacks.bufdelete()
+        end,
+      },
+    },
   },
   { "nvim-treesitter", lazy = false },
   { "nvim-lspconfig", lazy = false },
