@@ -14,11 +14,12 @@
     in
     {
       packages.${system}.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
-        neovimRcContent = "source ${./lua/init.lua}";
+        neovimRcContent = "luafile ${./lua/init.lua}";
         plugins = with pkgs.vimPlugins; [
           lz-n
           oil-nvim
           catppuccin-nvim
+          flash-nvim
         ];
       };
     };
