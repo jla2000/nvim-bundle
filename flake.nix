@@ -17,9 +17,12 @@
         neovimRcContent = "luafile ${./lua/init.lua}";
         plugins = with pkgs.vimPlugins; [
           lz-n
-          oil-nvim
-          catppuccin-nvim
-          flash-nvim
+          { plugin = oil-nvim; optional = true; }
+          { plugin = catppuccin-nvim; optional = true; }
+          { plugin = flash-nvim; optional = true; }
+          { plugin = snacks-nvim; optional = true; }
+          { plugin = nvim-treesitter.withAllGrammars; optional = true; }
+          { plugin = vim-tmux-navigator; optional = true; }
         ];
       };
     };

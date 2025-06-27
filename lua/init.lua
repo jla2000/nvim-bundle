@@ -7,8 +7,6 @@ vim.opt.shiftwidth = 2
 vim.opt.signcolumn = "yes:1"
 vim.opt.scrolloff = 8
 
-vim.cmd([[ colorscheme catppuccin ]])
-
 vim.diagnostic.config({
   jump = { float = true },
 })
@@ -65,5 +63,17 @@ require("lz.n").load({
       },
     },
   },
-  { "catppuccin", colorscheme = "catppuccin" },
+  {
+    "vim-tmux-navigator",
+    keys = {
+      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+    },
+  },
+  { "catppuccin-nvim", colorscheme = "catppuccin" },
 })
+
+vim.cmd([[ colorscheme catppuccin ]])
