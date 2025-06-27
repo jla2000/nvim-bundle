@@ -18,6 +18,7 @@
         plugins = with pkgs.vimPlugins; [
           lz-n
           oil-nvim
+          catppuccin-nvim
         ];
       };
     };

@@ -1,3 +1,5 @@
+vim.cmd([[ colorscheme catppuccin ]])
+
 require("lz.n").load({
   {
     "oil.nvim",
@@ -5,5 +7,9 @@ require("lz.n").load({
     after = function()
       require("oil").setup()
     end,
+  },
+  {
+    "catppuccin",
+    colorscheme = "catppuccin",
   },
 })
