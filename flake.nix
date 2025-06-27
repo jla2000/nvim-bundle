@@ -23,10 +23,15 @@
           { plugin = lazydev-nvim; optional = true; }
           { plugin = nvim-lspconfig; optional = true; }
           { plugin = nvim-treesitter.withAllGrammars; optional = true; }
+          { plugin = nvim-treesitter-textobjects; optional = true; }
           { plugin = oil-nvim; optional = true; }
           { plugin = snacks-nvim; optional = true; }
           { plugin = vim-tmux-navigator; optional = true; }
           { plugin = snacks-nvim; optional = true; }
+          { plugin = conform-nvim; optional = true; }
+          { plugin = fzf-lua; optional = true; }
+          { plugin = persistence-nvim; optional = true; }
+          { plugin = nvim-autopairs; optional = true; }
         ];
       };
     };

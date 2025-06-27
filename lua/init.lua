@@ -6,6 +6,8 @@ vim.opt.undofile = true
 vim.opt.shiftwidth = 2
 vim.opt.signcolumn = "yes:1"
 vim.opt.scrolloff = 8
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 vim.diagnostic.config({
   jump = { float = true },
@@ -14,6 +16,16 @@ vim.diagnostic.config({
 vim.keymap.set("n", "<esc>", "<cmd>nohl<cr><esc>")
 vim.keymap.set("n", "<tab>", "<cmd>bn<cr>")
 vim.keymap.set("n", "<s-tab>", "<cmd>bp<cr>")
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    vim.keymap.set("n", "<leader>D", vim.diagnostic.open_float, { buffer = args.bufnr })
+    vim.keymap.set("n", "gd", "<cmd>FzfLua lsp_definitions<cr>", { buffer = args.bufnr })
+    vim.keymap.set("n", "<leader>ss", "<cmd>FzfLua lsp_document_symbols<cr>", { buffer = args.bufnr })
+    vim.keymap.set("n", "<leader>sS", "<cmd>FzfLua lsp_live_workspace_symbols<cr>", { buffer = args.bufnr })
+    vim.lsp.inlay_hint.enable(true, { bufnr = args.bufnr })
+  end,
+})
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
@@ -40,7 +52,7 @@ require("lz.n").load({
     "oil.nvim",
     cmd = "Oil",
     after = function()
-      require("oil").setup()
+      require("oil").setup({ default_file_explorer = true })
     end,
     keys = {
       { "-", "<cmd>Oil<cr>", desc = "Open oil" },
@@ -124,7 +136,134 @@ require("lz.n").load({
       },
     },
   },
-  { "nvim-treesitter", lazy = false },
+  {
+    "conform.nvim",
+    event = "BufEnter",
+    after = function()
+      require("conform").setup({
+        formatters_by_ft = {
+          lua = { "stylua" },
+          nix = { "nixpkgs_fmt" },
+          rust = { "rustfmt" },
+        },
+        format_on_save = {
+          timeout_ms = 500,
+          lsp_format = "fallback",
+        },
+      })
+    end,
+  },
+  {
+    "fzf-lua",
+    cmd = "FzfLua",
+    keys = {
+      { "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Open files" },
+      { "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "Recent files" },
+      { "<leader>fb", "<cmd>FzfLua buffers<cr>", desc = "Recent files" },
+      { "<leader>sg", "<cmd>FzfLua live_grep<cr>", desc = "Search files" },
+    },
+    after = function()
+      require("fzf-lua").setup({
+        keymap = {
+          fzf = {
+            ["ctrl-q"] = "select-all+accept",
+          },
+        },
+        fzf_colors = true,
+      })
+    end,
+  },
+  {
+    "persistence.nvim",
+    event = "BufReadPre",
+    after = function()
+      require("persistence").setup()
+    end,
+    keys = {
+      {
+        "<leader>ql",
+        function()
+          require("persistence").load({ last = true })
+        end,
+      },
+    },
+  },
+  {
+    "nvim-autopairs",
+    event = "InsertEnter",
+    after = function()
+      require("nvim-autopairs").setup()
+    end,
+  },
+  {
+    "nvim-treesitter",
+    event = { "BufReadPre", "BufNewFile" },
+    after = function()
+      require("lz.n").trigger_load("nvim-treesitter-textobjects")
+    end,
+  },
+
+  {
+    "nvim-treesitter-textobjects",
+    event = { "BufReadPre", "BufNewFile" },
+    before = function()
+      require("lz.n").trigger_load("nvim-treesitter")
+    end,
+    after = function()
+      require("nvim-treesitter.configs").setup({
+        auto_install = false,
+        highlight = {
+          enable = true,
+        },
+        textobjects = {
+          select = {
+            enable = true,
+            lookahead = true,
+
+            keymaps = {
+              ["af"] = "@function.outer",
+              ["if"] = "@function.inner",
+              ["ac"] = "@class.outer",
+              ["ic"] = "@class.inner",
+              ["ia"] = "@parameter.inner",
+              ["aa"] = "@parameter.outer",
+              ["ix"] = "@comment.inner",
+              ["ax"] = "@comment.outer",
+            },
+          },
+          swap = {
+            enable = true,
+            swap_next = {
+              ["<leader>a"] = "@parameter.inner",
+            },
+            swap_previous = {
+              ["<leader>A"] = "@parameter.inner",
+            },
+          },
+          move = {
+            enable = true,
+            set_jumps = true,
+            goto_next_start = {
+              ["]a"] = "@parameter.inner",
+              ["]f"] = "@function.outer",
+            },
+            goto_next_end = {
+              ["]A"] = "@parameter.outer",
+              ["]F"] = "@function.outer",
+            },
+            goto_previous_start = {
+              ["[a"] = "@parameter.outer",
+              ["[f"] = "@function.outer",
+            },
+            goto_previous_end = {
+              ["[A"] = "@parameter.outer",
+              ["[F"] = "@function.outer",
+            },
+          },
+        },
+      })
+    end,
+  },
   { "nvim-lspconfig", lazy = false },
   { "catppuccin-nvim", colorscheme = "catppuccin" },
 })
