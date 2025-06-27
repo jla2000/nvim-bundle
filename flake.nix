@@ -23,6 +23,9 @@
           { plugin = snacks-nvim; optional = true; }
           { plugin = nvim-treesitter.withAllGrammars; optional = true; }
           { plugin = vim-tmux-navigator; optional = true; }
+          { plugin = nvim-lspconfig; optional = true; }
+          { plugin = lazydev-nvim; optional = true; }
+          { plugin = blink-cmp; optional = true; }
         ];
       };
     };

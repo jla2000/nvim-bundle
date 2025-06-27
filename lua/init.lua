@@ -12,7 +12,7 @@ vim.diagnostic.config({
 })
 
 vim.keymap.set("n", "<esc>", "<cmd>nohl<cr><esc>")
-vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>")
+vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>")
 vim.keymap.set("n", "<tab>", "<cmd>bn<cr>")
 vim.keymap.set("n", "<s-tab>", "<cmd>bp<cr>")
 
@@ -31,6 +31,10 @@ vim.api.nvim_create_autocmd("User", {
     end
   end,
 })
+
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("nixd")
 
 require("lz.n").load({
   {
@@ -73,6 +77,22 @@ require("lz.n").load({
       { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
   },
+  {
+    "lazydev.nvim",
+    ft = "lua",
+    after = function()
+      require("lazydev").setup()
+    end,
+  },
+  {
+    "blink.cmp",
+    event = "BufEnter",
+    after = function()
+      require("blink.cmp").setup()
+    end,
+  },
+  { "nvim-treesitter", lazy = false },
+  { "nvim-lspconfig", lazy = false },
   { "catppuccin-nvim", colorscheme = "catppuccin" },
 })
 
