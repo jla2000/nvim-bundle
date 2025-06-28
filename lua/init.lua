@@ -21,9 +21,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local opts = { buffer = args.buf }
     vim.keymap.set("n", "<leader>D", vim.diagnostic.open_float, opts)
-    vim.keymap.set("n", "gd", "<cmd>FzfLua lsp_definitions<cr>", opts)
-    vim.keymap.set("n", "<leader>ss", "<cmd>FzfLua lsp_document_symbols<cr>", opts)
-    vim.keymap.set("n", "<leader>sS", "<cmd>FzfLua lsp_live_workspace_symbols<cr>", opts)
     vim.keymap.set("n", "<leader>uh", function()
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
     end)
@@ -58,7 +55,19 @@ require("lz.n").load({
     "oil.nvim",
     cmd = "Oil",
     after = function()
-      require("oil").setup({ default_file_explorer = true })
+      require("oil").setup({
+        default_file_explorer = true,
+        skip_confirm_for_simple_edits = true,
+        delete_to_trash = true,
+        columns = {
+          "permissions",
+          "size",
+          "icon",
+        },
+        keymaps = {
+          ["<ESC>"] = "actions.close",
+        },
+      })
     end,
     keys = {
       { "-", "<cmd>Oil<cr>", desc = "Open oil" },
@@ -105,7 +114,13 @@ require("lz.n").load({
     "blink.cmp",
     event = "BufEnter",
     after = function()
-      require("blink.cmp").setup()
+      require("blink.cmp").setup({
+        keymap = {
+          preset = "default",
+          ["<Up>"] = { "select_prev", "fallback" },
+          ["<Down>"] = { "select_next", "fallback" },
+        },
+      })
     end,
   },
   {
@@ -174,6 +189,22 @@ require("lz.n").load({
       { "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "Recent files" },
       { "<leader>fb", "<cmd>FzfLua buffers<cr>", desc = "Recent files" },
       { "<leader>sg", "<cmd>FzfLua live_grep<cr>", desc = "Search files" },
+      { "gd", "<cmd>FzfLua lsp_definitions<cr>", desc = "Goto definition" },
+      { "<leader>ss", "<cmd>FzfLua lsp_document_symbols<cr>", desc = "Find symbol" },
+      {
+        "<leader>sS",
+        function()
+          require("fzf-lua").lsp_live_workspace_symbols({
+            winopts = {
+              preview = {
+                layout = "vertical",
+              },
+            },
+            formatter = "path.filename_first",
+          })
+        end,
+        desc = "Find global symbol",
+      },
     },
     after = function()
       require("fzf-lua").setup({
