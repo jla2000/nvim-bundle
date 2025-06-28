@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "live-rename-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1750686485,
+        "narHash": "sha256-5BnO04TUjGsT10PdQcfQrw54kIWX/0vNPl5+umWOHjw=",
+        "owner": "saecki",
+        "repo": "live-rename.nvim",
+        "rev": "78fcdb4072c6b1a8e909872f9a971b2f2b642d1e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "saecki",
+        "repo": "live-rename.nvim",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1750776420,
@@ -18,6 +34,7 @@
     },
     "root": {
       "inputs": {
+        "live-rename-nvim": "live-rename-nvim",
         "nixpkgs": "nixpkgs"
       }
     }

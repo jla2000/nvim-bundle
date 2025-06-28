@@ -3,14 +3,22 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    live-rename-nvim = { url = "github:saecki/live-rename.nvim"; flake = false; };
   };
 
-  outputs = { nixpkgs, ... }:
+  outputs = { nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
       };
+      buildPlugin = name: input:
+        pkgs.vimUtils.buildVimPlugin {
+          inherit name;
+          pname = name;
+          src = input;
+        };
+      live-rename-nvim = buildPlugin "live-rename.nvim" inputs.live-rename-nvim;
     in
     {
       packages.${system}.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
@@ -32,6 +40,8 @@
           { plugin = fzf-lua; optional = true; }
           { plugin = persistence-nvim; optional = true; }
           { plugin = nvim-autopairs; optional = true; }
+          { plugin = gitsigns-nvim; optional = true; }
+          { plugin = live-rename-nvim; optional = true; }
         ];
       };
     };

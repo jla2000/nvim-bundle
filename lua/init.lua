@@ -19,11 +19,17 @@ vim.keymap.set("n", "<s-tab>", "<cmd>bp<cr>")
 
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
-    vim.keymap.set("n", "<leader>D", vim.diagnostic.open_float, { buffer = args.bufnr })
-    vim.keymap.set("n", "gd", "<cmd>FzfLua lsp_definitions<cr>", { buffer = args.bufnr })
-    vim.keymap.set("n", "<leader>ss", "<cmd>FzfLua lsp_document_symbols<cr>", { buffer = args.bufnr })
-    vim.keymap.set("n", "<leader>sS", "<cmd>FzfLua lsp_live_workspace_symbols<cr>", { buffer = args.bufnr })
-    vim.lsp.inlay_hint.enable(true, { bufnr = args.bufnr })
+    local opts = { buffer = args.buf }
+    vim.keymap.set("n", "<leader>D", vim.diagnostic.open_float, opts)
+    vim.keymap.set("n", "gd", "<cmd>FzfLua lsp_definitions<cr>", opts)
+    vim.keymap.set("n", "<leader>ss", "<cmd>FzfLua lsp_document_symbols<cr>", opts)
+    vim.keymap.set("n", "<leader>sS", "<cmd>FzfLua lsp_live_workspace_symbols<cr>", opts)
+    vim.keymap.set("n", "<leader>uh", function()
+      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
+    end)
+    vim.keymap.set("n", "grn", function()
+      require("live-rename").rename()
+    end, opts)
   end,
 })
 
@@ -264,7 +270,18 @@ require("lz.n").load({
       })
     end,
   },
-  { "nvim-lspconfig", lazy = false },
+  {
+    "cfilter",
+    ft = "qf",
+  },
+  {
+    "gitsigns.nvim",
+    event = "DeferredUIEnter",
+    after = function()
+      require("gitsigns").setup()
+    end,
+  },
+  { "nvim-lspconfig", event = { "BufReadPre", "BufNewFile" } },
   { "catppuccin-nvim", colorscheme = "catppuccin" },
 })
 
