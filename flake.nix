@@ -27,21 +27,24 @@
           lz-n
           { plugin = blink-cmp; optional = true; }
           { plugin = catppuccin-nvim; optional = true; }
+          { plugin = conform-nvim; optional = true; }
+          { plugin = crates-nvim; optional = true; }
           { plugin = flash-nvim; optional = true; }
+          { plugin = fzf-lua; optional = true; }
+          { plugin = gitsigns-nvim; optional = true; }
           { plugin = lazydev-nvim; optional = true; }
+          { plugin = live-rename-nvim; optional = true; }
+          { plugin = nvim-autopairs; optional = true; }
           { plugin = nvim-lspconfig; optional = true; }
-          { plugin = nvim-treesitter.withAllGrammars; optional = true; }
+          { plugin = nvim-surround; optional = true; }
+          { plugin = nvim-treesitter-context; optional = true; }
           { plugin = nvim-treesitter-textobjects; optional = true; }
+          { plugin = nvim-treesitter.withAllGrammars; optional = true; }
           { plugin = oil-nvim; optional = true; }
+          { plugin = persistence-nvim; optional = true; }
+          { plugin = snacks-nvim; optional = true; }
           { plugin = snacks-nvim; optional = true; }
           { plugin = vim-tmux-navigator; optional = true; }
-          { plugin = snacks-nvim; optional = true; }
-          { plugin = conform-nvim; optional = true; }
-          { plugin = fzf-lua; optional = true; }
-          { plugin = persistence-nvim; optional = true; }
-          { plugin = nvim-autopairs; optional = true; }
-          { plugin = gitsigns-nvim; optional = true; }
-          { plugin = live-rename-nvim; optional = true; }
         ];
       };
     };

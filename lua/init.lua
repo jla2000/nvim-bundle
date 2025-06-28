@@ -10,7 +10,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.diagnostic.config({
-  jump = { float = true },
+  virtual_text = { current_line = true },
 })
 
 vim.keymap.set("n", "<esc>", "<cmd>nohl<cr><esc>")
@@ -144,12 +144,12 @@ require("lz.n").load({
   },
   {
     "conform.nvim",
-    event = "BufEnter",
+    event = "BufWritePre",
     after = function()
       require("conform").setup({
         formatters_by_ft = {
           lua = { "stylua" },
-          nix = { "nixpkgs_fmt" },
+          nix = { "nixpkgs_fmt", "injected" },
           rust = { "rustfmt" },
         },
         format_on_save = {
@@ -157,6 +157,13 @@ require("lz.n").load({
           lsp_format = "fallback",
         },
       })
+    end,
+  },
+  {
+    "crates.nvim",
+    event = "BufRead Cargo.toml",
+    after = function()
+      require("crates").setup({})
     end,
   },
   {
@@ -199,6 +206,15 @@ require("lz.n").load({
     event = "InsertEnter",
     after = function()
       require("nvim-autopairs").setup()
+    end,
+  },
+  {
+    "nvim-treesitter-context",
+    event = { "BufReadPre", "BufNewFile" },
+    after = function()
+      require("treesitter-context").setup({
+        max_lines = 3,
+      })
     end,
   },
   {
@@ -279,6 +295,17 @@ require("lz.n").load({
     event = "DeferredUIEnter",
     after = function()
       require("gitsigns").setup()
+    end,
+  },
+  {
+    "live-rename.nvim",
+    event = "BufEnter",
+  },
+  {
+    "nvim-surround",
+    event = "BufEnter",
+    after = function()
+      require("nvim-surround").setup({})
     end,
   },
   { "nvim-lspconfig", event = { "BufReadPre", "BufNewFile" } },
