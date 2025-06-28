@@ -35,6 +35,7 @@
           { plugin = lazydev-nvim; optional = true; }
           { plugin = live-rename-nvim; optional = true; }
           { plugin = nvim-autopairs; optional = true; }
+          { plugin = nvim-lint; optional = true; }
           { plugin = nvim-lspconfig; optional = true; }
           { plugin = nvim-surround; optional = true; }
           { plugin = nvim-treesitter-context; optional = true; }

@@ -20,6 +20,8 @@ vim.keymap.set("n", "<s-tab>", "<cmd>bp<cr>")
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local opts = { buffer = args.buf }
+    vim.lsp.inlay_hint.enable(true, opts)
+
     vim.keymap.set("n", "<leader>D", vim.diagnostic.open_float, opts)
     vim.keymap.set("n", "<leader>uh", function()
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
@@ -258,7 +260,6 @@ require("lz.n").load({
       require("lz.n").trigger_load("nvim-treesitter-textobjects")
     end,
   },
-
   {
     "nvim-treesitter-textobjects",
     event = { "BufReadPre", "BufNewFile" },
@@ -317,6 +318,21 @@ require("lz.n").load({
             },
           },
         },
+      })
+    end,
+  },
+  {
+    "nvim-lint",
+    event = { "BufReadPre", "BufNewFile" },
+    after = function()
+      require("lint").linters_by_ft = {
+        rust = { "clippy" },
+      }
+
+      vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
+        callback = function()
+          require("lint").try_lint()
+        end,
       })
     end,
   },
