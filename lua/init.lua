@@ -8,6 +8,7 @@ vim.opt.signcolumn = "yes:1"
 vim.opt.scrolloff = 8
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.wrap = false
 
 vim.diagnostic.config({
   virtual_text = { current_line = true },
@@ -359,7 +360,7 @@ require("lz.n").load({
     end,
   },
   { "nvim-lspconfig", event = { "BufReadPre", "BufNewFile" } },
-  { "catppuccin-nvim", colorscheme = "catppuccin" },
+  { "catppuccin-nvim", colorscheme = { "catppuccin", "catppuccin-macchiato" } },
 })
 
-vim.cmd([[ colorscheme catppuccin ]])
+vim.cmd([[ colorscheme catppuccin-macchiato ]])
