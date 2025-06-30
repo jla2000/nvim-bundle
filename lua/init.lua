@@ -330,6 +330,8 @@ require("lz.n").load({
         rust = { "clippy" },
       }
 
+      require("lint").linters.clippy.ignore_exitcode = true
+
       vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
         callback = function()
           require("lint").try_lint()
