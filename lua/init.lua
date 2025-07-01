@@ -271,22 +271,15 @@ require("lz.n").load({
     end,
   },
   {
-    "nvim-treesitter",
-    event = { "BufReadPre", "BufNewFile" },
-    after = function()
-      require("lz.n").trigger_load("nvim-treesitter-textobjects")
-    end,
-  },
-  {
     "nvim-treesitter-textobjects",
     event = { "BufReadPre", "BufNewFile" },
-    before = function()
-      require("lz.n").trigger_load("nvim-treesitter")
-    end,
     after = function()
       require("nvim-treesitter.configs").setup({
         auto_install = false,
         highlight = {
+          enable = true,
+        },
+        indent = {
           enable = true,
         },
         textobjects = {

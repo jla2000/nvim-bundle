@@ -31,6 +31,7 @@
         plugins = with pkgs.vimPlugins; [
           lz-n
           libdeflate-nvim
+          nvim-treesitter.withAllGrammars
           { plugin = blink-cmp; optional = true; }
           { plugin = catppuccin-nvim; optional = true; }
           { plugin = conform-nvim; optional = true; }
@@ -46,11 +47,9 @@
           { plugin = nvim-surround; optional = true; }
           { plugin = nvim-treesitter-context; optional = true; }
           { plugin = nvim-treesitter-textobjects; optional = true; }
-          { plugin = nvim-treesitter.withAllGrammars; optional = true; }
           { plugin = oil-nvim; optional = true; }
           { plugin = persistence-nvim; optional = true; }
           { plugin = plantuml-nvim; optional = true; }
-          { plugin = snacks-nvim; optional = true; }
           { plugin = snacks-nvim; optional = true; }
           { plugin = vim-tmux-navigator; optional = true; }
         ];
