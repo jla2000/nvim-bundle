@@ -28,9 +28,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>uh", function()
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
     end)
-    vim.keymap.set("n", "grn", function()
-      require("live-rename").rename()
-    end, opts)
   end,
 })
 
@@ -356,7 +353,14 @@ require("lz.n").load({
   },
   {
     "live-rename.nvim",
-    event = "BufEnter",
+    keys = {
+      {
+        "grn",
+        function()
+          require("live-rename").rename()
+        end,
+      },
+    },
   },
   {
     "nvim-surround",
