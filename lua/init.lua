@@ -50,11 +50,6 @@ vim.api.nvim_create_autocmd("User", {
   end,
 })
 
-vim.lsp.enable("lua_ls")
-vim.lsp.enable("rust_analyzer")
-vim.lsp.enable("nixd")
-vim.lsp.enable("pyrefly")
-
 vim.filetype.add({
   extension = {
     puml = "plantuml",
@@ -377,7 +372,16 @@ require("lz.n").load({
       require("plantuml").setup({})
     end,
   },
-  { "nvim-lspconfig", event = { "BufReadPre", "BufNewFile" } },
+  {
+    "nvim-lspconfig",
+    event = { "BufReadPre", "BufNewFile" },
+    after = function()
+      vim.lsp.enable("lua_ls")
+      vim.lsp.enable("rust_analyzer")
+      vim.lsp.enable("nixd")
+      vim.lsp.enable("pyrefly")
+    end,
+  },
   { "catppuccin-nvim", colorscheme = { "catppuccin", "catppuccin-macchiato" } },
 })
 
