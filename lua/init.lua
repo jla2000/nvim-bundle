@@ -53,6 +53,7 @@ vim.api.nvim_create_autocmd("User", {
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("nixd")
+vim.lsp.enable("pyrefly")
 
 require("lz.n").load({
   {
