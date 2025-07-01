@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     live-rename-nvim = { url = "github:saecki/live-rename.nvim"; flake = false; };
+    plantuml-nvim = { url = "github:goropikari/plantuml.nvim"; flake = false; };
+    libdeflate-nvim = { url = "github:goropikari/libdeflate.nvim"; flake = false; };
   };
 
   outputs = { nixpkgs, ... }@inputs:
@@ -12,19 +14,23 @@
       pkgs = import nixpkgs {
         inherit system;
       };
-      buildPlugin = name: input:
+      buildPlugin = name: input: deps:
         pkgs.vimUtils.buildVimPlugin {
           inherit name;
           pname = name;
           src = input;
+          dependencies = deps;
         };
-      live-rename-nvim = buildPlugin "live-rename.nvim" inputs.live-rename-nvim;
+      live-rename-nvim = buildPlugin "live-rename.nvim" inputs.live-rename-nvim [ ];
+      libdeflate-nvim = buildPlugin "LibDeflate.nvim" inputs.libdeflate-nvim [ ];
+      plantuml-nvim = buildPlugin "plantuml.nvim" inputs.plantuml-nvim [ libdeflate-nvim ];
     in
     {
       packages.${system}.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
         neovimRcContent = "luafile ${./lua/init.lua}";
         plugins = with pkgs.vimPlugins; [
           lz-n
+          libdeflate-nvim
           { plugin = blink-cmp; optional = true; }
           { plugin = catppuccin-nvim; optional = true; }
           { plugin = conform-nvim; optional = true; }
@@ -43,6 +49,7 @@
           { plugin = nvim-treesitter.withAllGrammars; optional = true; }
           { plugin = oil-nvim; optional = true; }
           { plugin = persistence-nvim; optional = true; }
+          { plugin = plantuml-nvim; optional = true; }
           { plugin = snacks-nvim; optional = true; }
           { plugin = snacks-nvim; optional = true; }
           { plugin = vim-tmux-navigator; optional = true; }

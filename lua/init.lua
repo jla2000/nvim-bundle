@@ -55,6 +55,12 @@ vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("nixd")
 vim.lsp.enable("pyrefly")
 
+vim.filetype.add({
+  extension = {
+    puml = "plantuml",
+  },
+})
+
 require("lz.n").load({
   {
     "oil.nvim",
@@ -369,6 +375,13 @@ require("lz.n").load({
     event = "BufEnter",
     after = function()
       require("nvim-surround").setup({})
+    end,
+  },
+  {
+    "plantuml.nvim",
+    ft = "plantuml",
+    after = function()
+      require("plantuml").setup({})
     end,
   },
   { "nvim-lspconfig", event = { "BufReadPre", "BufNewFile" } },

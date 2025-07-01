@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "libdeflate-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1750097000,
+        "narHash": "sha256-VLZvqV8Jjiu5hb0Mh80FAbDPAIgDfC9ol5uiCrM6AAA=",
+        "owner": "goropikari",
+        "repo": "libdeflate.nvim",
+        "rev": "c51cd94acf5bc7d3b75b1e202cf5fdac011fee46",
+        "type": "github"
+      },
+      "original": {
+        "owner": "goropikari",
+        "repo": "libdeflate.nvim",
+        "type": "github"
+      }
+    },
     "live-rename-nvim": {
       "flake": false,
       "locked": {
@@ -32,10 +48,28 @@
         "type": "github"
       }
     },
+    "plantuml-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1750097487,
+        "narHash": "sha256-1jSvvciJGN7DOLayby5HjIMWJPyCYaN2EvFOjly9aSw=",
+        "owner": "goropikari",
+        "repo": "plantuml.nvim",
+        "rev": "66d4dca1b8607be646ed532521ba0f04095361c4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "goropikari",
+        "repo": "plantuml.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
+        "libdeflate-nvim": "libdeflate-nvim",
         "live-rename-nvim": "live-rename-nvim",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "plantuml-nvim": "plantuml-nvim"
       }
     }
   },
