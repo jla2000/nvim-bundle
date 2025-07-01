@@ -326,23 +326,6 @@ require("lz.n").load({
     end,
   },
   {
-    "nvim-lint",
-    event = { "BufReadPre", "BufNewFile" },
-    after = function()
-      require("lint").linters_by_ft = {
-        rust = { "clippy" },
-      }
-
-      require("lint").linters.clippy.ignore_exitcode = true
-
-      vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
-        callback = function()
-          require("lint").try_lint()
-        end,
-      })
-    end,
-  },
-  {
     "cfilter",
     ft = "qf",
   },
@@ -382,6 +365,18 @@ require("lz.n").load({
     "nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     after = function()
+      vim.lsp.config("rust_analyzer", {
+        settings = {
+          ["rust-analyzer"] = {
+            check = {
+              command = "clippy",
+              extraArgs = { "--no-deps" },
+            },
+            checkOnSave = true,
+          },
+        },
+      })
+
       vim.lsp.enable("lua_ls")
       vim.lsp.enable("rust_analyzer")
       vim.lsp.enable("nixd")
