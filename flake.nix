@@ -6,6 +6,7 @@
     live-rename-nvim = { url = "github:saecki/live-rename.nvim"; flake = false; };
     plantuml-nvim = { url = "github:goropikari/plantuml.nvim"; flake = false; };
     libdeflate-nvim = { url = "github:goropikari/libdeflate.nvim"; flake = false; };
+    oil-git-nvim = { url = "github:benomahony/oil-git.nvim"; flake = false; };
   };
 
   outputs = { nixpkgs, ... }@inputs:
@@ -24,6 +25,7 @@
       live-rename-nvim = buildPlugin "live-rename.nvim" inputs.live-rename-nvim [ ];
       libdeflate-nvim = buildPlugin "LibDeflate.nvim" inputs.libdeflate-nvim [ ];
       plantuml-nvim = buildPlugin "plantuml.nvim" inputs.plantuml-nvim [ libdeflate-nvim ];
+      oil-git-nvim = buildPlugin "oil-git.nvim" inputs.oil-git-nvim [ ];
     in
     {
       packages.${system}.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
@@ -32,9 +34,10 @@
           luafile ${./nvim/init.lua}
         '';
         plugins = with pkgs.vimPlugins; [
-          lz-n
           libdeflate-nvim
+          lz-n
           nvim-treesitter.withAllGrammars
+          oil-git-nvim
           { plugin = blink-cmp; optional = true; }
           { plugin = catppuccin-nvim; optional = true; }
           { plugin = conform-nvim; optional = true; }
