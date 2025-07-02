@@ -45,40 +45,6 @@ return {
     end,
   },
   {
-    "snacks.nvim",
-    lazy = false,
-    after = function()
-      require("snacks").setup({
-        bigfile = { enabled = true },
-        bufdelete = { enabled = true },
-        input = { enabled = true },
-        picker = { enabled = true },
-        notifier = { enabled = true },
-        quickfile = { enabled = true },
-        lazygit = { enabled = true },
-      })
-    end,
-    keys = {
-      {
-        "<leader>gg",
-        function()
-          local git_folder = vim.fn.finddir(".git", ".;")
-          local root_folder = vim.fn.fnamemodify(git_folder, ":h")
-
-          Snacks.lazygit({
-            args = { "-p", root_folder },
-          })
-        end,
-      },
-      {
-        "<leader>bd",
-        function()
-          Snacks.bufdelete()
-        end,
-      },
-    },
-  },
-  {
     "persistence.nvim",
     event = "BufReadPre",
     after = function()
