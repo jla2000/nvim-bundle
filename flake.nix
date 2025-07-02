@@ -41,6 +41,7 @@
           { plugin = crates-nvim; optional = true; }
           { plugin = diffview-nvim; optional = true; }
           { plugin = flash-nvim; optional = true; }
+          { plugin = fzf-lua; optional = true; }
           { plugin = gitsigns-nvim; optional = true; }
           { plugin = lazydev-nvim; optional = true; }
           { plugin = live-rename-nvim; optional = true; }
