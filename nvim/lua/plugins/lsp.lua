@@ -2,11 +2,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local opts = { buffer = args.buf }
     vim.lsp.inlay_hint.enable(true, opts)
-
-    vim.keymap.set("n", "<leader>D", vim.diagnostic.open_float, opts)
-    vim.keymap.set("n", "<leader>uh", function()
-      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
-    end)
   end,
 })
 
