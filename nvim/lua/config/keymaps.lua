@@ -1,0 +1,3 @@
+vim.keymap.set("n", "<esc>", "<cmd>nohl<cr><esc>")
+vim.keymap.set("n", "<tab>", "<cmd>bn<cr>")
+vim.keymap.set("n", "<s-tab>", "<cmd>bp<cr>")

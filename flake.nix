@@ -27,7 +27,10 @@
     in
     {
       packages.${system}.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
-        neovimRcContent = "luafile ${./lua/init.lua}";
+        neovimRcContent = ''
+          set rtp^=${./nvim}
+          luafile ${./nvim/init.lua}
+        '';
         plugins = with pkgs.vimPlugins; [
           lz-n
           libdeflate-nvim
