@@ -39,6 +39,7 @@
           { plugin = catppuccin-nvim; optional = true; }
           { plugin = conform-nvim; optional = true; }
           { plugin = crates-nvim; optional = true; }
+          { plugin = diffview-nvim; optional = true; }
           { plugin = flash-nvim; optional = true; }
           { plugin = fzf-lua; optional = true; }
           { plugin = gitsigns-nvim; optional = true; }

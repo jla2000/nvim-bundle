@@ -115,5 +115,40 @@ return {
       require("nvim-surround").setup({})
     end,
   },
-  { "catppuccin-nvim", colorscheme = { "catppuccin", "catppuccin-macchiato" } },
+  {
+    "catppuccin-nvim",
+    event = "UIEnter",
+    colorscheme = { "catppuccin", "catppuccin-macchiato" },
+    after = function()
+      vim.cmd.colorscheme("catppuccin-macchiato")
+    end,
+  },
+
+  {
+    "diffview.nvim",
+    cmd = "DiffviewOpen",
+    opts = {},
+    keys = {
+      {
+        "<leader>vv",
+        function()
+          if next(require("diffview.lib").views) == nil then
+            vim.cmd("DiffviewOpen")
+          else
+            vim.cmd("DiffviewClose")
+          end
+        end,
+      },
+      {
+        "<leader>vm",
+        function()
+          if next(require("diffview.lib").views) == nil then
+            vim.cmd("DiffviewOpen HEAD..main")
+          else
+            vim.cmd("DiffviewClose")
+          end
+        end,
+      },
+    },
+  },
 }
