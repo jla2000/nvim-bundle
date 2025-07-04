@@ -42,13 +42,15 @@
           { plugin = conform-nvim; optional = true; }
           { plugin = crates-nvim; optional = true; }
           { plugin = diffview-nvim; optional = true; }
+          { plugin = fidget-nvim; optional = true; }
           { plugin = flash-nvim; optional = true; }
           { plugin = fzf-lua; optional = true; }
           { plugin = gitsigns-nvim; optional = true; }
           { plugin = lazydev-nvim; optional = true; }
           { plugin = live-rename-nvim; optional = true; }
-          { plugin = fidget-nvim; optional = true; }
           { plugin = nvim-autopairs; optional = true; }
+          { plugin = nvim-dap-ui; optional = true; }
+          { plugin = nvim-dap; optional = true; }
           { plugin = nvim-lint; optional = true; }
           { plugin = nvim-lspconfig; optional = true; }
           { plugin = nvim-surround; optional = true; }
