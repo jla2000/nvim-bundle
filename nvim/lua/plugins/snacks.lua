@@ -25,11 +25,8 @@ return {
     {
       "<leader>gg",
       function()
-        local git_folder = vim.fn.finddir(".git", ".;")
-        local root_folder = vim.fn.fnamemodify(git_folder, ":h")
-
         Snacks.lazygit({
-          args = { "-p", root_folder },
+          args = { "-p", Snacks.git.get_root() },
         })
       end,
     },
