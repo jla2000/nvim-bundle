@@ -2,7 +2,8 @@ return {
   "fidget.nvim",
   event = "DeferredUIEnter",
   after = function()
-    require("fidget").setup({})
-    vim.notify = require("fidget.notification").notify
+    require("fidget").setup({
+      notification = { override_vim_notify = true },
+    })
   end,
 }

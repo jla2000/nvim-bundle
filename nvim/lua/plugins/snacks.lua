@@ -25,6 +25,7 @@ return {
     {
       "<leader>gg",
       function()
+        ---@diagnostic disable-next-line: missing-fields
         Snacks.lazygit({
           args = { "-p", Snacks.git.get_root() },
         })
