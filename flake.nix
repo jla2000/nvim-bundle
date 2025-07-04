@@ -29,15 +29,14 @@
     in
     {
       packages.${system}.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
-        neovimRcContent = ''
-          set rtp^=${./nvim}
-          luafile ${./nvim/init.lua}
+        luaRcContent = ''
+          vim.opt.rtp:prepend("${./nvim}")
+          dofile("${./nvim/init.lua}")
         '';
         plugins = with pkgs.vimPlugins; [
           libdeflate-nvim
           lz-n
           nvim-treesitter.withAllGrammars
-          oil-git-nvim
           { plugin = blink-cmp; optional = true; }
           { plugin = catppuccin-nvim; optional = true; }
           { plugin = conform-nvim; optional = true; }
