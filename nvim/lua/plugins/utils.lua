@@ -2,6 +2,7 @@ return {
   {
     "flash.nvim",
     after = function()
+      ---@diagnostic disable-next-line: missing-fields
       require("flash").setup({
         modes = {
           char = {

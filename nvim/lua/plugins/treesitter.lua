@@ -12,6 +12,7 @@ return {
     "nvim-treesitter-textobjects",
     event = { "BufReadPre", "BufNewFile" },
     after = function()
+      ---@diagnostic disable-next-line: missing-fields
       require("nvim-treesitter.configs").setup({
         auto_install = false,
         highlight = {
@@ -67,6 +68,8 @@ return {
           },
         },
       })
+
+      vim.api.nvim_set_hl(0, "TreesitterContextBottom", { underline = false })
     end,
   },
 }
