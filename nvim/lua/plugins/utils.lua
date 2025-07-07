@@ -84,9 +84,23 @@ return {
   {
     "catppuccin-nvim",
     event = "UIEnter",
-    colorscheme = { "catppuccin", "catppuccin-macchiato" },
     after = function()
-      vim.cmd.colorscheme("catppuccin-macchiato")
+      require("catppuccin").setup({
+        flavor = "macchiato",
+        integrations = {
+          native_lsp = {
+            enabled = true,
+            underlines = {
+              errors = { "undercurl" },
+              warnings = { "undercurl" },
+              hints = { "undercurl" },
+              information = { "undercurl" },
+            },
+          },
+        },
+      })
+
+      vim.cmd.colorscheme("catppuccin")
     end,
   },
 
