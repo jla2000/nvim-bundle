@@ -1,7 +1,7 @@
 return {
   {
     "nvim-dap-ui",
-    event = "DeferredUIEnter",
+    --event = "DeferredUIEnter",
     after = function()
       require("dapui").setup({})
     end,
@@ -17,7 +17,7 @@ return {
   },
   {
     "nvim-dap",
-    event = "DeferredUIEnter",
+    --event = "DeferredUIEnter",
     after = function()
       local dap = require("dap")
 
