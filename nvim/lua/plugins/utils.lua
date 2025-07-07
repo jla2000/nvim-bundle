@@ -97,6 +97,10 @@ return {
               information = { "undercurl" },
             },
           },
+          snacks = true,
+          treesitter_context = true,
+          gitsigns = true,
+          fzf = true,
         },
       })
 
