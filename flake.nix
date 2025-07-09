@@ -33,6 +33,8 @@
           vim.opt.rtp:prepend("${./nvim}")
           dofile("${./nvim/init.lua}")
         '';
+        viAlias = true;
+        vimAlias = true;
         plugins = with pkgs.vimPlugins; [
           libdeflate-nvim
           lz-n
