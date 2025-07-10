@@ -50,6 +50,8 @@ return {
           lua = { "stylua" },
           nix = { "nixpkgs_fmt", "injected" },
           rust = { "rustfmt" },
+          python = { "black" },
+          markdown = { "markdownlint-cli2" },
         },
         format_on_save = function(bufnr)
           if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
