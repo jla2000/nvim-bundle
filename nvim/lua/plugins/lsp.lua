@@ -19,6 +19,9 @@ return {
               command = "clippy",
               extraArgs = { "--no-deps" },
             },
+            cargo = {
+              features = "all",
+            },
             checkOnSave = true,
           },
         },
