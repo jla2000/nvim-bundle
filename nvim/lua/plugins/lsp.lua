@@ -51,7 +51,7 @@ return {
           nix = { "nixpkgs_fmt", "injected" },
           rust = { "rustfmt" },
           python = { "black" },
-          toml = { "taplo " },
+          toml = { "taplo" },
           markdown = { "markdownlint-cli2" },
         },
         format_on_save = function(bufnr)
