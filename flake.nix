@@ -61,6 +61,7 @@
           { plugin = oil-nvim; optional = true; }
           { plugin = persistence-nvim; optional = true; }
           { plugin = plantuml-nvim; optional = true; }
+          { plugin = render-markdown-nvim; optional = true; }
           { plugin = snacks-nvim; optional = true; }
           { plugin = vim-tmux-navigator; optional = true; }
         ];
