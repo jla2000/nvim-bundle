@@ -30,3 +30,6 @@ end)
 vim.keymap.set("n", "<leader>d", function()
   reset_virtual_lines()
 end)
+
+vim.keymap.set("v", ">", ">gv")
+vim.keymap.set("v", "<", "<gv")
