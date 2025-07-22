@@ -7,7 +7,7 @@ return {
     end,
     keys = {
       {
-        "<leader>du",
+        "<leader>uu",
         function()
           require("dapui").toggle()
         end,
