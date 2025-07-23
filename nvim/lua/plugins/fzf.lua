@@ -7,7 +7,7 @@ return {
     { "<leader>fb", "<cmd>FzfLua buffers<cr>", desc = "Recent files" },
     { "<leader>sg", "<cmd>FzfLua live_grep<cr>", desc = "Search files" },
     { "<leader>sR", "<cmd>FzfLua resume<cr>", desc = "Search files" },
-    { "gr", "<cmd>FzfLua lsp_references<cr>", desc = "Lsp references" },
+    { "grr", "<cmd>FzfLua lsp_references<cr>", desc = "Lsp references" },
     { "<leader>ss", "<cmd>FzfLua lsp_document_symbols<cr>", desc = "Find symbol" },
     {
       "<leader>sS",
