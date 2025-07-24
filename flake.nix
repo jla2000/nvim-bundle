@@ -3,10 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    live-rename-nvim = { url = "github:saecki/live-rename.nvim"; flake = false; };
-    plantuml-nvim = { url = "github:goropikari/plantuml.nvim"; flake = false; };
-    libdeflate-nvim = { url = "github:goropikari/libdeflate.nvim"; flake = false; };
-    oil-git-nvim = { url = "github:benomahony/oil-git.nvim"; flake = false; };
   };
 
   outputs = { nixpkgs, ... }@inputs:
@@ -15,17 +11,6 @@
       pkgs = import nixpkgs {
         inherit system;
       };
-      buildPlugin = name: input: deps:
-        pkgs.vimUtils.buildVimPlugin {
-          inherit name;
-          pname = name;
-          src = input;
-          dependencies = deps;
-        };
-      live-rename-nvim = buildPlugin "live-rename.nvim" inputs.live-rename-nvim [ ];
-      libdeflate-nvim = buildPlugin "LibDeflate.nvim" inputs.libdeflate-nvim [ ];
-      plantuml-nvim = buildPlugin "plantuml.nvim" inputs.plantuml-nvim [ libdeflate-nvim ];
-      oil-git-nvim = buildPlugin "oil-git.nvim" inputs.oil-git-nvim [ ];
     in
     {
       packages.${system}.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
@@ -36,7 +21,7 @@
         viAlias = true;
         vimAlias = true;
         plugins = with pkgs.vimPlugins; [
-          libdeflate-nvim
+          LibDeflate-nvim
           lz-n
           nvim-treesitter.withAllGrammars
           { plugin = blink-cmp; optional = true; }
