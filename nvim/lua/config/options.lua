@@ -16,6 +16,10 @@ vim.opt.swapfile = false
 vim.opt.confirm = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldtext = ""
+vim.opt.foldlevel = 99
 
 vim.diagnostic.config({
   virtual_text = false,
