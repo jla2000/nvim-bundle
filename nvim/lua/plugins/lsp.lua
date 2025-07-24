@@ -12,23 +12,7 @@ return {
     "nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     after = function()
-      vim.lsp.config("rust_analyzer", {
-        settings = {
-          ["rust-analyzer"] = {
-            check = {
-              command = "clippy",
-              extraArgs = { "--no-deps" },
-            },
-            cargo = {
-              features = "all",
-            },
-            checkOnSave = true,
-          },
-        },
-      })
-
       vim.lsp.enable("lua_ls")
-      vim.lsp.enable("rust_analyzer")
       vim.lsp.enable("nixd")
       vim.lsp.enable("pyrefly")
     end,

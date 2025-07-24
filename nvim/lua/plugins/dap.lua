@@ -1,67 +1,46 @@
 return {
   {
     "nvim-dap-ui",
-    --event = "DeferredUIEnter",
-    after = function()
-      require("dapui").setup({})
-    end,
-    keys = {
-      {
-        "<leader>uu",
-        function()
-          require("dapui").toggle()
-        end,
-        desc = "Toggle dap ui",
-      },
-    },
-  },
-  {
-    "nvim-dap",
-    --event = "DeferredUIEnter",
+    ft = "rust",
     after = function()
       local dap = require("dap")
+      local dapui = require("dapui")
 
-      dap.adapters.gdb = {
-        type = "executable",
-        command = "gdb",
-        args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
-      }
+      dapui.setup()
 
-      dap.configurations.rust = {
-        {
-          name = "Launch",
-          type = "gdb",
-          request = "launch",
-          program = function()
-            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-          end,
-          cwd = "${workspaceFolder}",
-          stopAtBeginningOfMainSubprogram = false,
-        },
-        {
-          name = "Select and attach to process",
-          type = "gdb",
-          request = "attach",
-          program = function()
-            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-          end,
-          pid = function()
-            local name = vim.fn.input("Executable name (filter): ")
-            return require("dap.utils").pick_process({ filter = name })
-          end,
-          cwd = "${workspaceFolder}",
-        },
-        {
-          name = "Attach to gdbserver :1234",
-          type = "gdb",
-          request = "attach",
-          target = "localhost:1234",
-          program = function()
-            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-          end,
-          cwd = "${workspaceFolder}",
-        },
-      }
+      local enter_debug = function()
+        dapui.open()
+        vim.diagnostic.hide()
+
+        -- stylua: ignore start
+        vim.keymap.set("n", "<down>", function() dap.step_over() end)
+        vim.keymap.set("n", "<right>", function() dap.step_into() end)
+        vim.keymap.set("n", "<left>", function() dap.step_out() end)
+        -- stylua: ignore end
+      end
+
+      local exit_debug = function()
+        dapui.close()
+        vim.diagnostic.show()
+
+        -- stylua: ignore start
+        vim.keymap.del("n", "<down>")
+        vim.keymap.del("n", "<right>")
+        vim.keymap.del("n", "<left>")
+        -- stylua: ignore end
+      end
+
+      dap.listeners.before.attach.dapui_config = enter_debug
+      dap.listeners.before.launch.dapui_config = enter_debug
+      dap.listeners.before.event_exited.dapui_config = exit_debug
+      dap.listeners.before.event_terminated.dapui_config = exit_debug
     end,
+    keys = {
+      -- stylua: ignore start
+      { "<leader>du", function() require("dapui").toggle() end, desc = "Toggle breakpoint" },
+      { "<leader>db", "<cmd>DapToggleBreakpoint<cr>", desc = "Toggle breakpoint" },
+      { "<leader>dc", "<cmd>DapContinue<cr>", desc = "Toggle breakpoint" },
+      -- stylua: ignore end
+    },
   },
 }
