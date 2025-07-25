@@ -36,6 +36,7 @@
           { plugin = gitsigns-nvim; optional = true; }
           { plugin = lazydev-nvim; optional = true; }
           { plugin = live-rename-nvim; optional = true; }
+          { plugin = lualine-nvim; optional = true; }
           { plugin = nvim-autopairs; optional = true; }
           { plugin = nvim-dap-ui; optional = true; }
           { plugin = nvim-lint; optional = true; }
