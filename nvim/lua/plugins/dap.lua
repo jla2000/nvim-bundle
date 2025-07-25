@@ -8,6 +8,14 @@ return {
 
       dapui.setup()
 
+      vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticError" })
+      vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
+
+      vim.fn.sign_define(
+        "DapStopped",
+        { text = "", texthl = "DiagnosticWarn", linehl = "DapStoppedLine", numhl = "DapStoppedLine" }
+      )
+
       local enter_debug = function()
         dapui.open()
         vim.diagnostic.hide()
@@ -22,12 +30,6 @@ return {
       local exit_debug = function()
         dapui.close()
         vim.diagnostic.show()
-
-        -- stylua: ignore start
-        vim.keymap.del("n", "<down>")
-        vim.keymap.del("n", "<right>")
-        vim.keymap.del("n", "<left>")
-        -- stylua: ignore end
       end
 
       dap.listeners.before.attach.dapui_config = enter_debug
@@ -37,9 +39,10 @@ return {
     end,
     keys = {
       -- stylua: ignore start
-      { "<leader>du", function() require("dapui").toggle() end, desc = "Toggle breakpoint" },
-      { "<leader>db", "<cmd>DapToggleBreakpoint<cr>", desc = "Toggle breakpoint" },
-      { "<leader>dc", "<cmd>DapContinue<cr>", desc = "Toggle breakpoint" },
+      { "<leader>du", function() require("dapui").toggle() end, desc = "Toggle ui" },
+      { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle breakpoint" },
+      { "<leader>dc", function() require("dap").continue() end, desc = "Toggle breakpoint" },
+      { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Toggle breakpoint" },
       -- stylua: ignore end
     },
   },
