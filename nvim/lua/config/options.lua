@@ -22,7 +22,7 @@ vim.opt.foldtext = ""
 vim.opt.foldlevel = 99
 vim.opt.cmdheight = 0
 vim.opt.winborder = "rounded"
-vim.opt.guicursor = "i:block-lualine_a_insert,n:block-lualine_a_normal,v:block-lualine_a_visual"
+-- vim.opt.guicursor = "i:block-lualine_a_insert,n:block-lualine_a_normal,v:block-lualine_a_visual"
 
 vim.diagnostic.config({
   virtual_text = false,
