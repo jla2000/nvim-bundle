@@ -6,6 +6,8 @@ vim.keymap.set("n", "]t", "<cmd>tabn<cr>")
 vim.keymap.set("n", "[t", "<cmd>tabp<cr>")
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>p", '"+p')
 
 -- TODO: replace with on_jump option once available
 local reset_virtual_lines = vim.schedule_wrap(function()
