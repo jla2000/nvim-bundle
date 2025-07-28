@@ -1,3 +1,10 @@
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "rust",
+  callback = function()
+    vim.fn.matchadd("ErrorMsg", "\\<SAFETY\\ze:")
+  end,
+})
+
 return {
   {
     "rustaceanvim",
