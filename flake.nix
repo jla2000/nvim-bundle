@@ -51,6 +51,7 @@
           { plugin = rustaceanvim; optional = true; }
           { plugin = snacks-nvim; optional = true; }
           { plugin = vim-tmux-navigator; optional = true; }
+          { plugin = which-key-nvim; optional = true; }
         ];
       };
     };
