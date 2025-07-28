@@ -36,7 +36,7 @@ return {
 
     -- Find
     { "<leader>bd", function() Snacks.bufdelete() end, },
-    { "<leader>D", function() Snacks.picker.diagnostics() end, },
+    { "<leader>d", function() Snacks.picker.diagnostics() end, },
     { "<leader>n", function() Snacks.picker.notifications() end, },
     { "<leader>sk", function() Snacks.picker.keymaps() end, },
 

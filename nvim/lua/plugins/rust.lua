@@ -7,7 +7,7 @@ return {
         return {
           server = {
             on_attach = function()
-              vim.keymap.set("n", "<leader>dr", function()
+              vim.keymap.set("n", "<leader>Dr", function()
                 vim.cmd.RustLsp("debuggables")
               end)
             end,

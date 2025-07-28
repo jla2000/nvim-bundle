@@ -39,10 +39,10 @@ return {
     end,
     keys = {
       -- stylua: ignore start
-      { "<leader>du", function() require("dapui").toggle() end, desc = "Toggle ui" },
-      { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle breakpoint" },
-      { "<leader>dc", function() require("dap").continue() end, desc = "Toggle breakpoint" },
-      { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Toggle breakpoint" },
+      { "<leader>Du", function() require("dapui").toggle() end, desc = "Toggle ui" },
+      { "<leader>Db", function() require("dap").toggle_breakpoint() end, desc = "Toggle breakpoint" },
+      { "<leader>Dc", function() require("dap").continue() end, desc = "Toggle breakpoint" },
+      { "<leader>DC", function() require("dap").run_to_cursor() end, desc = "Toggle breakpoint" },
       -- stylua: ignore end
     },
   },
