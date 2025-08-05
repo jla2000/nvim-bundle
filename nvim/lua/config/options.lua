@@ -20,7 +20,6 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldtext = ""
 vim.opt.foldlevel = 99
-vim.opt.cmdheight = 0
 -- vim.opt.guicursor = "i:block-lualine_a_insert,n:block-lualine_a_normal,v:block-lualine_a_visual"
 vim.fn.matchadd("ErrorMsg", "\\<SAFETY\\ze:")
 
