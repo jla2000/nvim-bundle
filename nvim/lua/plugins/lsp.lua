@@ -12,9 +12,29 @@ return {
     "nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     after = function()
+      vim.lsp.config("rust_analyzer", {
+        check = {
+          command = "clippy",
+          extraArgs = { "--no-deps" },
+        },
+        cargo = {
+          features = "all",
+        },
+        checkOnSave = true,
+        files = {
+          excludeDirs = {
+            ".direnv",
+            ".git",
+            ".jj",
+            "target",
+          },
+        },
+      })
+
       vim.lsp.enable("lua_ls")
       vim.lsp.enable("nixd")
       vim.lsp.enable("pyrefly")
+      vim.lsp.enable("rust_analyzer")
     end,
   },
   {

@@ -23,7 +23,6 @@
         plugins = with pkgs.vimPlugins; [
           LibDeflate-nvim
           lz-n
-          nvim-dap
           nvim-treesitter.withAllGrammars
           { plugin = blink-cmp; optional = true; }
           { plugin = catppuccin-nvim; optional = true; }
@@ -38,7 +37,6 @@
           { plugin = live-rename-nvim; optional = true; }
           { plugin = lualine-nvim; optional = true; }
           { plugin = nvim-autopairs; optional = true; }
-          { plugin = nvim-dap-ui; optional = true; }
           { plugin = nvim-lint; optional = true; }
           { plugin = nvim-lspconfig; optional = true; }
           { plugin = nvim-surround; optional = true; }
@@ -48,7 +46,6 @@
           { plugin = persistence-nvim; optional = true; }
           { plugin = plantuml-nvim; optional = true; }
           { plugin = render-markdown-nvim; optional = true; }
-          { plugin = rustaceanvim; optional = true; }
           { plugin = snacks-nvim; optional = true; }
           { plugin = vim-tmux-navigator; optional = true; }
           { plugin = which-key-nvim; optional = true; }
