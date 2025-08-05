@@ -27,15 +27,8 @@ return {
         -- stylua: ignore end
       end
 
-      local exit_debug = function()
-        dapui.close()
-        vim.diagnostic.show()
-      end
-
       dap.listeners.before.attach.dapui_config = enter_debug
       dap.listeners.before.launch.dapui_config = enter_debug
-      dap.listeners.before.event_exited.dapui_config = exit_debug
-      dap.listeners.before.event_terminated.dapui_config = exit_debug
     end,
     keys = {
       -- stylua: ignore start
