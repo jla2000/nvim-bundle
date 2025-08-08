@@ -13,20 +13,22 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     after = function()
       vim.lsp.config("rust_analyzer", {
-        check = {
-          command = "clippy",
-          extraArgs = { "--no-deps" },
-        },
-        cargo = {
-          features = "all",
-        },
-        checkOnSave = true,
-        files = {
-          excludeDirs = {
-            ".direnv",
-            ".git",
-            ".jj",
-            "target",
+        settings = {
+          check = {
+            command = "clippy",
+            extraArgs = { "--no-deps" },
+          },
+          cargo = {
+            features = "all",
+          },
+          checkOnSave = true,
+          files = {
+            excludeDirs = {
+              ".direnv",
+              ".git",
+              ".jj",
+              "target",
+            },
           },
         },
       })
