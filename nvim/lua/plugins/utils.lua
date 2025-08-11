@@ -84,7 +84,7 @@ return {
   },
   {
     "catppuccin-nvim",
-    event = "UIEnter",
+    event = "VimEnter",
     after = function()
       require("catppuccin").setup({
         flavor = "macchiato",
