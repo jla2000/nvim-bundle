@@ -17,6 +17,7 @@ return {
       notifier = { enabled = true },
       quickfile = { enabled = true },
       lazygit = { enabled = true },
+      indent = { enabled = true },
     })
 
     Snacks.toggle.inlay_hints():map("<leader>uh")
