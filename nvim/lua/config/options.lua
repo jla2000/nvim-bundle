@@ -23,8 +23,7 @@ vim.opt.foldlevel = 99
 vim.fn.matchadd("ErrorMsg", "\\<SAFETY\\ze:")
 
 vim.diagnostic.config({
-  virtual_text = false,
-  virtual_lines = false,
+  virtual_text = true,
   signs = {
     text = {
       [vim.diagnostic.severity.ERROR] = "",
@@ -33,4 +32,8 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.HINT] = "",
     },
   },
+  float = { source = true },
+  jump = { float = true },
+  severity_sort = true,
+  update_in_insert = true,
 })
