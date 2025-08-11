@@ -23,7 +23,7 @@ vim.opt.foldlevel = 99
 vim.fn.matchadd("ErrorMsg", "\\<SAFETY\\ze:")
 
 vim.diagnostic.config({
-  virtual_text = true,
+  virtual_text = { source = true },
   signs = {
     text = {
       [vim.diagnostic.severity.ERROR] = "",
