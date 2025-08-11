@@ -11,7 +11,6 @@ vim.opt.scrolloff = 8
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.wrap = false
-vim.opt.laststatus = 3
 vim.opt.swapfile = false
 vim.opt.confirm = true
 vim.opt.splitbelow = true
