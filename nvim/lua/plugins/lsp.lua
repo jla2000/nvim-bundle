@@ -14,20 +14,24 @@ return {
     after = function()
       vim.lsp.config("rust_analyzer", {
         settings = {
-          check = {
-            command = "clippy",
-            extraArgs = { "--no-deps" },
-          },
-          cargo = {
-            features = "all",
-          },
-          checkOnSave = true,
-          files = {
-            excludeDirs = {
-              ".direnv",
-              ".git",
-              ".jj",
-              "target",
+          ["rust-analyzer"] = {
+            cargo = {
+              allFeatures = true,
+              buildScripts = { enable = true },
+              loadOutDirsFromCheck = true,
+            },
+            check = {
+              command = "clippy",
+              extraArgs = { "--no-deps" },
+            },
+            checkOnSave = true,
+            files = {
+              excludeDirs = {
+                ".direnv",
+                ".git",
+                ".jj",
+                "target",
+              },
             },
           },
         },
