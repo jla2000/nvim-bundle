@@ -117,4 +117,11 @@ return {
       })
     end,
   },
+  {
+    "symbol-usage.nvim",
+    event = "LspAttach",
+    after = function()
+      require("symbol-usage").setup()
+    end,
+  },
 }

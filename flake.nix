@@ -11,6 +11,18 @@
       pkgs = import nixpkgs {
         inherit system;
       };
+      symbol-usage-nvim = pkgs.vimUtils.buildVimPlugin {
+        pname = "symbol-usage.nvim";
+        version = "2025-05-03";
+        src = pkgs.fetchFromGitHub {
+          owner = "Wansmer";
+          repo = "symbol-usage.nvim";
+          rev = "e07c07dfe7504295a369281e95a24e1afa14b243";
+          sha256 = "0539ahy72wh8rdkn2pybsdk58ki0jdn9dk2ap7q65986crjglr6d";
+        };
+        meta.homepage = "https://github.com/Wansmer/symbol-usage.nvim/";
+        meta.hydraPlatforms = [ ];
+      };
     in
     {
       packages.${system}.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
@@ -47,6 +59,7 @@
           { plugin = plantuml-nvim; optional = true; }
           { plugin = render-markdown-nvim; optional = true; }
           { plugin = snacks-nvim; optional = true; }
+          { plugin = symbol-usage-nvim; optional = true; }
           { plugin = vim-tmux-navigator; optional = true; }
           { plugin = which-key-nvim; optional = true; }
         ];
