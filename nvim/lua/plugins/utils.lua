@@ -87,7 +87,6 @@ return {
     event = "VimEnter",
     after = function()
       require("catppuccin").setup({
-        flavor = "macchiato",
         integrations = {
           native_lsp = {
             enabled = true,
@@ -105,7 +104,7 @@ return {
         },
       })
 
-      vim.cmd.colorscheme("catppuccin")
+      vim.cmd.colorscheme("catppuccin-frappe")
     end,
   },
 
