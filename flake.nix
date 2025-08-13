@@ -3,9 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    fff = {
+      url = "github:dmtrKovalenko/fff.nvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, ... }:
+  outputs = { nixpkgs, fff, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -20,9 +24,8 @@
           rev = "e07c07dfe7504295a369281e95a24e1afa14b243";
           sha256 = "0539ahy72wh8rdkn2pybsdk58ki0jdn9dk2ap7q65986crjglr6d";
         };
-        meta.homepage = "https://github.com/Wansmer/symbol-usage.nvim/";
-        meta.hydraPlatforms = [ ];
       };
+      fff-nvim = fff.packages.${system}.fff-nvim;
     in
     {
       packages.${system}.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
@@ -41,6 +44,7 @@
           { plugin = conform-nvim; optional = true; }
           { plugin = crates-nvim; optional = true; }
           { plugin = diffview-nvim; optional = true; }
+          { plugin = fff-nvim; optional = true; }
           { plugin = fidget-nvim; optional = true; }
           { plugin = flash-nvim; optional = true; }
           { plugin = fzf-lua; optional = true; }

@@ -2,8 +2,6 @@ return {
   "fzf-lua",
   cmd = "FzfLua",
   keys = {
-    { "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Open files" },
-    { "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "Recent files" },
     { "<leader>fb", "<cmd>FzfLua buffers<cr>", desc = "Recent files" },
     { "<leader>sg", "<cmd>FzfLua live_grep<cr>", desc = "Search files" },
     { "<leader>sR", "<cmd>FzfLua resume<cr>", desc = "Search files" },
