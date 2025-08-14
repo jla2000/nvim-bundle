@@ -121,7 +121,9 @@ return {
     "symbol-usage.nvim",
     event = "LspAttach",
     after = function()
-      require("symbol-usage").setup()
+      require("symbol-usage").setup({
+        vt_position = "end_of_line",
+      })
     end,
   },
 }
