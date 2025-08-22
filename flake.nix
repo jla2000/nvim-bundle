@@ -15,16 +15,6 @@
       pkgs = import nixpkgs {
         inherit system;
       };
-      symbol-usage-nvim = pkgs.vimUtils.buildVimPlugin {
-        pname = "symbol-usage.nvim";
-        version = "2025-05-03";
-        src = pkgs.fetchFromGitHub {
-          owner = "Wansmer";
-          repo = "symbol-usage.nvim";
-          rev = "e07c07dfe7504295a369281e95a24e1afa14b243";
-          sha256 = "0539ahy72wh8rdkn2pybsdk58ki0jdn9dk2ap7q65986crjglr6d";
-        };
-      };
       fff-nvim = fff.packages.${system}.fff-nvim;
     in
     {
@@ -44,6 +34,7 @@
           { plugin = conform-nvim; optional = true; }
           { plugin = crates-nvim; optional = true; }
           { plugin = diffview-nvim; optional = true; }
+          { plugin = everforest; optional = true; }
           { plugin = fff-nvim; optional = true; }
           { plugin = fidget-nvim; optional = true; }
           { plugin = flash-nvim; optional = true; }

@@ -84,7 +84,6 @@ return {
   },
   {
     "catppuccin-nvim",
-    event = "VimEnter",
     after = function()
       require("catppuccin").setup({
         integrations = {
@@ -107,7 +106,13 @@ return {
       vim.cmd.colorscheme("catppuccin-mocha")
     end,
   },
-
+  {
+    "everforest",
+    event = "VimEnter",
+    after = function()
+      vim.cmd.colorscheme("everforest")
+    end,
+  },
   {
     "diffview.nvim",
     cmd = "DiffviewOpen",
