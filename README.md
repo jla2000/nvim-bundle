@@ -17,4 +17,4 @@ nix run github:jla2000/nvim-bundle
 - Build and execute via `nix`
 - Entire config writtin in `lua`
 - Lazy loading using `lz.n`
-- Config can be changed without rebuilding (when `.#homeManagerModules.neovim` is used)
+- Lua config can be changed without rebuilding package (when `.#homeManagerModules.neovim` is used)
