@@ -2,7 +2,7 @@
 
 # `nvim-bundle`
 
-**Very over-engineered neovim config**
+**Personal neovim flake**
 
 </div>
 
