@@ -6,7 +6,7 @@
 
 </div>
 
-## Usage
+## Try without installation
 
 ```bash
 nix run --extra-experimental-features "nix-command flakes" github:jla2000/nvim-bundle
