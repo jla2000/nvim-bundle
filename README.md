@@ -10,8 +10,9 @@
 
 ```bash
 nix run github:jla2000/nvim-bundle
-
 ```
+
+[Nix](https://nixos.org/) is used to build this project.
 
 ## Installation
 
