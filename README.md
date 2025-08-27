@@ -12,7 +12,7 @@
 nix run github:jla2000/nvim-bundle
 ```
 
-[Nix](https://nixos.org/) is used to build this project.
+[Nix](https://nixos.org/) is used to build this project (Enable [flakes](https://nixos.wiki/wiki/Flakes) to run the command above).
 
 ## Installation
 
