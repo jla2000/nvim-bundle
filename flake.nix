@@ -16,13 +16,7 @@
         inherit system;
       };
       fff-nvim = fff.packages.${system}.fff-nvim;
-    in
-    {
-      packages.${system}.default = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
-        luaRcContent = ''
-          vim.opt.rtp:prepend("${./nvim}")
-          dofile("${./nvim/init.lua}")
-        '';
+      neovim = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
         viAlias = true;
         vimAlias = true;
         plugins = with pkgs.vimPlugins; [
@@ -58,6 +52,26 @@
           { plugin = vim-tmux-navigator; optional = true; }
           { plugin = which-key-nvim; optional = true; }
         ];
+      };
+    in
+    {
+      packages.${system}.default = neovim.override {
+        luaRcContent = ''
+          vim.opt.rtp:prepend("${./nvim}")
+          dofile("${./nvim/init.lua}")
+        '';
+      };
+
+      homeManagerModules.neovim = { config, lib, ... }: {
+        options.neovim.configPath = lib.mkOption {
+          type = lib.types.path;
+          description = "Path to the neovim lua config";
+        };
+
+        config = {
+          home.packages = [ neovim ];
+          xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink config.neovim.configPath;
+        };
       };
     };
 }
