@@ -6,9 +6,24 @@
 
 </div>
 
+## Usage
+
 ```bash
 nix run github:jla2000/nvim-bundle
 
+```
+
+## Installation
+
+Include `nvim-bundle.packages.x86_64-linux.neovim` into nixos/home-manager config.
+
+## Installation (with symlinked lua config)
+
+Example (configPath needs to be adapted):
+
+```nix
+imports = [ nvim-bundle.homeManagerModules.neovim ];
+neovim.configPath = "/home/jlafferton/dev/nvim-bundle/nvim";
 ```
 
 ## Features
