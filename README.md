@@ -34,3 +34,7 @@ neovim.configPath = "/home/jlafferton/dev/nvim-bundle/nvim";
 - Entire config writtin in `lua`
 - Lazy loaded plugins using [lz.n](https://github.com/nvim-neorocks/lz.n)
 - Lua config can be changed on-the-fly without rebuilding (using symlinked lua config)
+
+## Similar projects
+
+- [nixCats-nvim](https://github.com/BirdeeHub/nixCats-nvim)
