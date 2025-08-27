@@ -2,7 +2,7 @@
 
 # `nvim-bundle`
 
-**Very over-engineered neovim flake**
+**Very over-engineered neovim config**
 
 </div>
 
@@ -18,9 +18,9 @@ nix run github:jla2000/nvim-bundle
 
 Include `nvim-bundle.packages.x86_64-linux.neovim` into nixos/home-manager config.
 
-## Installation (HomeManager with symlinked lua config)
+## Installation (Dev-mode with symlinked lua config)
 
-Example (configPath needs to be adapted):
+Example (configPath needs to be adapted) that can be included into [home-manager](https://github.com/nix-community/home-manager) config.
 
 ```nix
 imports = [ nvim-bundle.homeManagerModules.neovim ];
@@ -32,5 +32,5 @@ neovim.configPath = "/home/jlafferton/dev/nvim-bundle/nvim";
 - All plugins are fetched from `nixpkgs`
 - Build and execute via `nix`
 - Entire config writtin in `lua`
-- Lazy loading using `lz.n`
-- Lua config can be changed without rebuilding package (when `.#homeManagerModules.neovim` is used)
+- Lazy loaded plugins using [lz.n](https://github.com/nvim-neorocks/lz.n)
+- Lua config can be changed on-the-fly without rebuilding (using symlinked lua config)
