@@ -69,7 +69,11 @@
         };
 
         config = {
-          home.packages = [ neovim ];
+          home.packages = [
+            (neovim.override {
+              wrapRc = false;
+            })
+          ];
           xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink config.neovim.configPath;
         };
       };
