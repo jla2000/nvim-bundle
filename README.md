@@ -9,10 +9,10 @@
 ## Usage
 
 ```bash
-nix run github:jla2000/nvim-bundle
+nix run --extra-experimental-features "nix-command flakes" github:jla2000/nvim-bundle
 ```
 
-[Nix](https://nixos.org/) is used to build this project (Enable [flakes](https://nixos.wiki/wiki/Flakes) to run the command above).
+[Nix](https://nixos.org/) is used to build this project.
 
 ## Installation
 
