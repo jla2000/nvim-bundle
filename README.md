@@ -16,6 +16,8 @@ nix run --extra-experimental-features "nix-command flakes" github:jla2000/nvim-b
 
 [Nix](https://nixos.org/) is used to build this project.
 
+Alternatively, there is also an `AppImage` built automatically in the build ci workflow.
+
 ## Installation
 
 Include `nvim-bundle.packages.x86_64-linux.neovim` into nixos/home-manager config.
