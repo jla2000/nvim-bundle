@@ -3,6 +3,7 @@
 # `nvim-bundle`
 
 **Personal neovim flake**
+![build](https://github.com/github/docs/actions/workflows/ci.yml/badge.svg)
 
 </div>
 
