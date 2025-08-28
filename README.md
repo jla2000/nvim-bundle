@@ -16,7 +16,7 @@ nix run --extra-experimental-features "nix-command flakes" github:jla2000/nvim-b
 
 [Nix](https://nixos.org/) is used to build this project.
 
-Alternatively, there is also an `AppImage` built automatically in the build ci workflow.
+Alternatively, you can also download an `AppImage` from the artifacts of the latest CI run.
 
 ## Installation
 
