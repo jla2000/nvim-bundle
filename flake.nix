@@ -7,16 +7,20 @@
       url = "github:dmtrKovalenko/fff.nvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-appimage = {
+      url = "github:ralismark/nix-appimage";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, fff, ... }:
+  outputs = { nixpkgs, fff, nix-appimage, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
       };
       fff-nvim = fff.packages.${system}.fff-nvim;
-      neovim = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
+      neovim-wrapped = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
         viAlias = true;
         vimAlias = true;
         plugins = with pkgs.vimPlugins; [
@@ -55,11 +59,17 @@
       };
     in
     {
-      packages.${system}.default = neovim.override {
-        luaRcContent = ''
-          vim.opt.rtp:prepend("${./nvim}")
-          dofile("${./nvim/init.lua}")
-        '';
+      packages.${system} = rec {
+        neovim = neovim-wrapped.override {
+          luaRcContent = ''
+            vim.opt.rtp:prepend("${./nvim}")
+            dofile("${./nvim/init.lua}")
+          '';
+        };
+        neovim-appimage = nix-appimage.lib.${system}.mkAppImage {
+          program = "${neovim}/bin/nvim";
+        };
+        default = neovim;
       };
 
       homeManagerModules.neovim = { config, lib, ... }: {
@@ -69,11 +79,7 @@
         };
 
         config = {
-          home.packages = [
-            (neovim.override {
-              wrapRc = false;
-            })
-          ];
+          home.packages = [ (neovim-wrapped.override { wrapRc = false; }) ];
           xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink config.neovim.configPath;
         };
       };
