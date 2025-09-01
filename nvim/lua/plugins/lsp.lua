@@ -43,6 +43,7 @@ return {
       vim.lsp.enable("rust_analyzer")
     end,
   },
+  { "nvim-lint", event = { "BufReadPre" } },
   {
     "live-rename.nvim",
     keys = {
