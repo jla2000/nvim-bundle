@@ -84,7 +84,6 @@ return {
   },
   {
     "catppuccin-nvim",
-    event = "VimEnter",
     after = function()
       require("catppuccin").setup({
         integrations = {
@@ -111,6 +110,13 @@ return {
     "everforest",
     after = function()
       vim.cmd.colorscheme("everforest")
+    end,
+  },
+  {
+    "tokyonight",
+    event = "VimEnter",
+    after = function()
+      vim.cmd.colorscheme("tokyonight")
     end,
   },
   {

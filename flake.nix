@@ -27,6 +27,7 @@
           LibDeflate-nvim
           lz-n
           nvim-treesitter.withAllGrammars
+          { plugin = blame-nvim; optional = true; }
           { plugin = blink-cmp; optional = true; }
           { plugin = catppuccin-nvim; optional = true; }
           { plugin = conform-nvim; optional = true; }
@@ -37,7 +38,6 @@
           { plugin = fidget-nvim; optional = true; }
           { plugin = flash-nvim; optional = true; }
           { plugin = fzf-lua; optional = true; }
-          { plugin = blame-nvim; optional = true; }
           { plugin = gitsigns-nvim; optional = true; }
           { plugin = lazydev-nvim; optional = true; }
           { plugin = live-rename-nvim; optional = true; }
@@ -54,6 +54,7 @@
           { plugin = render-markdown-nvim; optional = true; }
           { plugin = snacks-nvim; optional = true; }
           { plugin = symbol-usage-nvim; optional = true; }
+          { plugin = tokyonight-nvim; optional = true; }
           { plugin = vim-tmux-navigator; optional = true; }
           { plugin = which-key-nvim; optional = true; }
         ];

@@ -13,6 +13,8 @@ vim.keymap.set({ "n", "v" }, "<leader>p", '"+p')
 
 vim.keymap.set("n", "<leader>cf", ":Cfilter ")
 vim.keymap.set("n", "<leader>cc", ":copen<cr>")
+vim.keymap.set("n", "<leader>co", ":colder<cr>")
+vim.keymap.set("n", "<leader>cn", ":cnext<cr>")
 
 vim.keymap.set("n", "<leader>ff", ":find<space>")
 vim.keymap.set("n", "<leader>fb", ":b<space>")
