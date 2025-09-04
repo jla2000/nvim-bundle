@@ -8,9 +8,12 @@ vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set({ "n", "v" }, "<leader>p", '"+p')
+vim.keymap.set("n", "<leader>cf", ":Cfilter ")
+vim.keymap.set("n", "<leader>cc", ":copen<cr>")
 
 vim.keymap.set("n", "<leader>ff", ":find<space>")
 vim.keymap.set("n", "<leader>fb", ":b<space>")
+vim.keymap.set("n", "<leader>sg", ":grep ''<left>")
 
 vim.keymap.set("n", "grn", function()
   return ":LspRename " .. vim.fn.expand("<cword>")
