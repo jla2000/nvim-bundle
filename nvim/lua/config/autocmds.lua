@@ -11,3 +11,10 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufWritePre" }, {
     require("lint").try_lint("cspell")
   end,
 })
+
+vim.api.nvim_create_autocmd("QuickFixCmdPost", {
+  pattern = "grep",
+  callback = function()
+    vim.cmd.cwindow()
+  end,
+})

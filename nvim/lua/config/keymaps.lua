@@ -1,24 +1,24 @@
 vim.keymap.set("n", "<esc>", "<cmd>nohl<cr><esc>")
 vim.keymap.set("n", "<tab>", "<cmd>bn<cr>")
 vim.keymap.set("n", "<s-tab>", "<cmd>bp<cr>")
-vim.keymap.set("n", "<leader>xq", "<cmd>copen<cr>")
+
 vim.keymap.set("n", "]t", "<cmd>tabn<cr>")
 vim.keymap.set("n", "[t", "<cmd>tabp<cr>")
+
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")
+
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set({ "n", "v" }, "<leader>p", '"+p')
+
 vim.keymap.set("n", "<leader>cf", ":Cfilter ")
 vim.keymap.set("n", "<leader>cc", ":copen<cr>")
 
 vim.keymap.set("n", "<leader>ff", ":find<space>")
 vim.keymap.set("n", "<leader>fb", ":b<space>")
-vim.keymap.set("n", "<leader>sg", ":grep ''<left>")
+vim.keymap.set("n", "<leader>sg", ":sil grep ''<left>")
 
-vim.keymap.set("n", "grn", function()
-  return ":LspRename " .. vim.fn.expand("<cword>")
-end, { expr = true })
-
+vim.keymap.set("n", "grn", ":LspRename <c-r><c-w>")
 vim.keymap.set("n", "<leader>sS", ":LspSymbol ")
 
 vim.api.nvim_create_user_command("LspRename", function(opts)
