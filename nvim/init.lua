@@ -3,4 +3,4 @@ require("config.keymaps")
 require("config.autocmds")
 require("lz.n").load("plugins")
 
-vim.cmd.colorscheme("catppuccin-mocha")
+vim.cmd.colorscheme("everforest")
