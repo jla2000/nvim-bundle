@@ -22,11 +22,12 @@ vim.opt.foldlevel = 99
 vim.opt.jumpoptions = "stack"
 vim.opt.wildmenu = true
 vim.opt.wildmode = "noselect:longest:lastused,full"
+vim.opt.grepprg = "rg --vimgrep --hidden -g '!.git/*'"
+vim.opt.findfunc = "v:lua.FuzzyFindFile"
 
 function FuzzyFindFile(cmdarg, _)
   return vim.fn.systemlist("fd --hidden . | fzf --filter '" .. cmdarg .. "'")
 end
-vim.opt.findfunc = "v:lua.FuzzyFindFile"
 
 -- vim.opt.guicursor = "i:block-lualine_a_insert,n:block-lualine_a_normal,v:block-lualine_a_visual"
 vim.fn.matchadd("ErrorMsg", "\\<SAFETY\\ze:")
