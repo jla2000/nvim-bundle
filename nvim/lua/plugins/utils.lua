@@ -84,6 +84,7 @@ return {
   },
   {
     "catppuccin-nvim",
+    event = "VimEnter",
     after = function()
       require("catppuccin").setup({
         integrations = {
@@ -108,7 +109,6 @@ return {
   },
   {
     "everforest",
-    event = "VimEnter",
     after = function()
       vim.cmd.colorscheme("everforest")
     end,
