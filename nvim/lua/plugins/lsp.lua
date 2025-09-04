@@ -37,9 +37,22 @@ return {
         },
       })
 
+      vim.lsp.config("zuban", {
+        cmd = { "zuban", "server" },
+        filetypes = { "python" },
+        root_markers = {
+          "pyproject.toml",
+          "setup.py",
+          "setup.cfg",
+          "requirements.txt",
+          "Pipfile",
+          ".git",
+        },
+      })
+
       vim.lsp.enable("lua_ls")
       vim.lsp.enable("nixd")
-      vim.lsp.enable("pyrefly")
+      vim.lsp.enable("zuban")
       vim.lsp.enable("clangd")
       vim.lsp.enable("rust_analyzer")
     end,

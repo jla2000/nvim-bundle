@@ -84,6 +84,7 @@ return {
   },
   {
     "catppuccin-nvim",
+    colorscheme = "catppuccin-mocha",
     after = function()
       require("catppuccin").setup({
         integrations = {
@@ -102,22 +103,15 @@ return {
           fzf = true,
         },
       })
-
-      vim.cmd.colorscheme("catppuccin-mocha")
     end,
   },
   {
     "everforest",
-    after = function()
-      vim.cmd.colorscheme("everforest")
-    end,
+    colorscheme = "everforest",
   },
   {
-    "tokyonight",
-    event = "VimEnter",
-    after = function()
-      vim.cmd.colorscheme("tokyonight")
-    end,
+    "tokyonight.nvim",
+    colorscheme = "tokyonight",
   },
   {
     "diffview.nvim",
