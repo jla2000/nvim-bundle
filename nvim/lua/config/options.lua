@@ -23,16 +23,6 @@ vim.opt.jumpoptions = "stack"
 vim.opt.wildmenu = true
 vim.opt.wildmode = "noselect:lastused,full"
 vim.opt.grepprg = "rg --vimgrep --hidden -g '!.git/*'"
-vim.opt.findfunc = "v:lua.RgFindFiles"
-
-function RgFindFiles(cmdarg, _)
-  local files = vim.fn.systemlist("rg --files --hidden --color=never --glob='!.git'")
-  if #cmdarg == 0 then
-    return vim.list_slice(files, 1, 10)
-  else
-    return vim.fn.matchfuzzy(files, cmdarg, { limit = 10 })
-  end
-end
 
 -- vim.opt.guicursor = "i:block-lualine_a_insert,n:block-lualine_a_normal,v:block-lualine_a_visual"
 vim.fn.matchadd("ErrorMsg", "\\<SAFETY\\ze:")
