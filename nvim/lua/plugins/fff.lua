@@ -20,7 +20,10 @@ return {
     event = "DeferredUIEnter",
     after = function()
       require("fff").setup({})
-      vim.opt.findfunc = "v:lua.FFFFindFunc"
+      -- vim.opt.findfunc = "v:lua.FFFFindFunc"
     end,
+    keys = {
+      { "<leader>ff", "<cmd>FFFFind<cr>" },
+    },
   },
 }
