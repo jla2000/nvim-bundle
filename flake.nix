@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     fff = {
       url = "github:dmtrKovalenko/fff.nvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,14 +13,14 @@
     };
   };
 
-  outputs = { nixpkgs, fff, nix-appimage, neovim-nightly, ... }:
+  outputs = { nixpkgs, fff, nix-appimage, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
       };
       fff-nvim = fff.packages.${system}.fff-nvim;
-      neovim-wrapped = pkgs.wrapNeovimUnstable neovim-nightly.packages.${system}.neovim {
+      neovim-wrapped = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
         viAlias = true;
         vimAlias = true;
         plugins = with pkgs.vimPlugins; [
