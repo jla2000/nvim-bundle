@@ -30,3 +30,7 @@ end, { nargs = 1 })
 vim.api.nvim_create_user_command("LspSymbol", function(opts)
   vim.lsp.buf.workspace_symbol(opts.args)
 end, { nargs = 1 })
+
+vim.api.nvim_create_user_command("StripAnsi", function(opts)
+  vim.cmd([[ %s/\e\[[0-9;]*m//g ]])
+end, {})
