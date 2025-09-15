@@ -3,6 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    neovim = {
+      url = "github:neovim/neovim";
+      flake = false;
+    };
     fff = {
       url = "github:dmtrKovalenko/fff.nvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,14 +17,18 @@
     };
   };
 
-  outputs = { nixpkgs, fff, nix-appimage, ... }:
+  outputs = { nixpkgs, fff, nix-appimage, neovim, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
       };
       fff-nvim = fff.packages.${system}.fff-nvim;
-      neovim-wrapped = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
+      neovim-unwrapped = pkgs.neovim-unwrapped.overrideAttrs {
+        version = "0.12.0-dev";
+        src = neovim;
+      };
+      neovim-wrapped = pkgs.wrapNeovimUnstable neovim-unwrapped {
         viAlias = true;
         vimAlias = true;
         plugins = with pkgs.vimPlugins; [
