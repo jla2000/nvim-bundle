@@ -25,11 +25,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1757413503,
-        "narHash": "sha256-qKoFeSMzNTeUZdKZ7BiG8vhy7Tr0bw/ri4XLZGXJKVE=",
+        "lastModified": 1758042756,
+        "narHash": "sha256-mCeEse1rY1T04TE6OqeOGP4Mlvk1aHc1N2q1njc93fI=",
         "owner": "dmtrKovalenko",
         "repo": "fff.nvim",
-        "rev": "7cdc71d5a1123a6121ec83cc63949e9916b95cb7",
+        "rev": "3a803c40edf24dcb6b51ef40aeb4210d4c7a0dd3",
         "type": "github"
       },
       "original": {
@@ -93,11 +93,11 @@
     "neovim": {
       "flake": false,
       "locked": {
-        "lastModified": 1757918489,
-        "narHash": "sha256-qeXrdi7c7MYpK9hALnlaG2cNgitfpgbVKKoo0d+eH5s=",
+        "lastModified": 1758080187,
+        "narHash": "sha256-J0WfqbIK1ftH3x/McoNTwBOZfuRtLvwq8r0xHNZyDwo=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "2debe2f30a4587e307f6e152aafd91b82af46f75",
+        "rev": "63ece2b151e3d051d9366452441f64430ae5b45e",
         "type": "github"
       },
       "original": {
@@ -115,11 +115,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1749006067,
-        "narHash": "sha256-rSwndd+4JmGrjR/APDTgJlXTEPwfCmt7UF+SceW3bfM=",
+        "lastModified": 1757920913,
+        "narHash": "sha256-jd0QwCVz4O1sHHkeaZILD/7D6oyalceEJ4EFnWCgm0k=",
         "owner": "ralismark",
         "repo": "nix-appimage",
-        "rev": "5dadbcd9f0da9adc49d6d831d5c2eab0bbfdae67",
+        "rev": "7946addbc0d97e358a6d7aefe5e82310f0fe6b18",
         "type": "github"
       },
       "original": {
