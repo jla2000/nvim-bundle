@@ -84,7 +84,7 @@ return {
   },
   {
     "catppuccin-nvim",
-    colorscheme = "catppuccin-mocha",
+    colorscheme = { "catppuccin", "catppuccin-macchiato" },
     after = function()
       require("catppuccin").setup({
         integrations = {
@@ -111,7 +111,7 @@ return {
   },
   {
     "tokyonight.nvim",
-    colorscheme = "tokyonight",
+    colorscheme = { "tokyonight", "tokyonight-storm" },
   },
   {
     "diffview.nvim",
