@@ -126,9 +126,6 @@ return {
           ["<Up>"] = { "select_prev", "fallback" },
           ["<Down>"] = { "select_next", "fallback" },
         },
-        cmdline = {
-          enabled = false,
-        },
       })
     end,
   },
