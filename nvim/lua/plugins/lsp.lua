@@ -53,6 +53,7 @@ return {
       vim.lsp.enable("lua_ls")
       vim.lsp.enable("nixd")
       vim.lsp.enable("zuban")
+      vim.lsp.enable("zls")
       vim.lsp.enable("clangd")
       vim.lsp.enable("rust_analyzer")
     end,
