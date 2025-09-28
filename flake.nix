@@ -75,6 +75,7 @@
             dofile("${./nvim/init.lua}")
           '';
         };
+        neovim-noconfig = neovim-wrapped.override { wrapRc = false; };
         neovim-appimage = nix-appimage.lib.${system}.mkAppImage {
           program = "${neovim}/bin/nvim";
         };
