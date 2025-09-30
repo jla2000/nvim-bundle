@@ -27,7 +27,6 @@
           LibDeflate-nvim
           lz-n
           nvim-treesitter.withAllGrammars
-          { plugin = blame-nvim; optional = true; }
           { plugin = blink-cmp; optional = true; }
           { plugin = catppuccin-nvim; optional = true; }
           { plugin = conform-nvim; optional = true; }

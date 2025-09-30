@@ -151,11 +151,4 @@ return {
       })
     end,
   },
-  {
-    "blame.nvim",
-    cmd = "BlameToggle",
-    after = function()
-      require("blame").setup()
-    end,
-  },
 }
