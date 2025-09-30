@@ -90,6 +90,22 @@
         "type": "github"
       }
     },
+    "neovim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1758080187,
+        "narHash": "sha256-J0WfqbIK1ftH3x/McoNTwBOZfuRtLvwq8r0xHNZyDwo=",
+        "owner": "neovim",
+        "repo": "neovim",
+        "rev": "63ece2b151e3d051d9366452441f64430ae5b45e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "neovim",
+        "repo": "neovim",
+        "type": "github"
+      }
+    },
     "nix-appimage": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -131,6 +147,7 @@
     "root": {
       "inputs": {
         "fff": "fff",
+        "neovim": "neovim",
         "nix-appimage": "nix-appimage",
         "nixpkgs": "nixpkgs"
       }
