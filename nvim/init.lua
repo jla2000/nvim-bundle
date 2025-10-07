@@ -2,6 +2,15 @@ require("config.options")
 require("config.keymaps")
 require("config.autocmds")
 
+vim.api.nvim_create_autocmd("PackChanged", {
+  callback = function(event)
+    if event.data.updated then
+      require("fff.download").download_binary()
+      vim.cmd.TSUpdate()
+    end
+  end,
+})
+
 vim.pack.add({
   "https://github.com/2KAbhishek/nerdy.nvim",
   "https://github.com/MeanderingProgrammer/render-markdown.nvim",
