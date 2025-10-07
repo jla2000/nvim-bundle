@@ -18,6 +18,12 @@ return {
           require("flash").jump()
         end,
       },
+      {
+        "S",
+        function()
+          require("flash").treesitter()
+        end,
+      },
     },
   },
   {
