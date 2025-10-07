@@ -17,7 +17,6 @@ vim.pack.add({
   "https://github.com/ibhagwan/fzf-lua",
   "https://github.com/j-hui/fidget.nvim",
   "https://github.com/kylechui/nvim-surround",
-  "https://github.com/kylechui/nvim-surround",
   "https://github.com/lewis6991/gitsigns.nvim",
   "https://github.com/lumen-oss/lz.n",
   "https://github.com/mfussenegger/nvim-lint",
