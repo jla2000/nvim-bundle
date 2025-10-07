@@ -44,6 +44,7 @@ require("lz.n").load("plugins")
 vim.api.nvim_create_autocmd("PackChanged", {
   callback = function(event)
     if event.data.updated then
+      vim.cmd.TSUpdate()
       vim.cmd.packadd("fff.nvim")
       require("fff.download").download_or_build_binary()
     end
