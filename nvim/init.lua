@@ -7,7 +7,7 @@ vim.pack.add({
   "https://github.com/MeanderingProgrammer/render-markdown.nvim",
   "https://github.com/Wansmer/symbol-usage.nvim",
   "https://github.com/christoomey/vim-tmux-navigator",
-  "https://github.com/Irdis/fff.nvim",
+  "https://github.com/dmtrKovalenko/fff.nvim",
   "https://github.com/folke/flash.nvim",
   "https://github.com/folke/lazydev.nvim",
   "https://github.com/folke/persistence.nvim",
