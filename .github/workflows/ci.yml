@@ -16,12 +16,5 @@ jobs:
       - uses: DeterminateSystems/magic-nix-cache-action@main
       - uses: DeterminateSystems/flake-checker-action@main
 
-      - name: Build AppImage
-        run: nix build .#neovim-appimage
-
-      - name: Upload AppImage
-        uses: actions/upload-artifact@v4
-        with:
-          name: nvim-bundle.AppImage
-          path: ./result
-
+      - name: Build neovim
+        run: nix build .#neovim
