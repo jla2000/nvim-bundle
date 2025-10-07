@@ -7,7 +7,7 @@ vim.pack.add({
   "https://github.com/MeanderingProgrammer/render-markdown.nvim",
   "https://github.com/Wansmer/symbol-usage.nvim",
   "https://github.com/christoomey/vim-tmux-navigator",
-  "https://github.com/dmtrKovalenko/fff.nvim",
+  "https://github.com/Irdis/fff.nvim",
   "https://github.com/folke/flash.nvim",
   "https://github.com/folke/lazydev.nvim",
   "https://github.com/folke/persistence.nvim",
@@ -37,6 +37,8 @@ vim.pack.add({
 }, { load = function() end })
 
 vim.cmd.packadd("lz.n")
+vim.cmd.packadd("nvim-treesitter")
+
 require("lz.n").load("plugins")
 
 vim.api.nvim_create_autocmd("PackChanged", {
