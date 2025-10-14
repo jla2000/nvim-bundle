@@ -38,7 +38,7 @@
       "src": "https://github.com/folke/flash.nvim"
     },
     "fzf-lua": {
-      "rev": "c0c0926",
+      "rev": "83e4080",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
@@ -94,7 +94,7 @@
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "oil.nvim": {
-      "rev": "919e155",
+      "rev": "200df01",
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "persistence.nvim": {
@@ -102,11 +102,11 @@
       "src": "https://github.com/folke/persistence.nvim"
     },
     "render-markdown.nvim": {
-      "rev": "f3321d0",
+      "rev": "691651d",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "snacks.nvim": {
-      "rev": "bfe8c26",
+      "rev": "454ba02",
       "src": "https://github.com/folke/snacks.nvim"
     },
     "symbol-usage.nvim": {
