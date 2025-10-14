@@ -93,16 +93,15 @@ return {
     colorscheme = { "catppuccin", "catppuccin-macchiato" },
     after = function()
       require("catppuccin").setup({
-        integrations = {
-          native_lsp = {
-            enabled = true,
-            underlines = {
-              errors = { "undercurl" },
-              warnings = { "undercurl" },
-              hints = { "undercurl" },
-              information = { "undercurl" },
-            },
+        lsp_styles = {
+          underlines = {
+            errors = { "undercurl" },
+            warnings = { "undercurl" },
+            hints = { "undercurl" },
+            information = { "undercurl" },
           },
+        },
+        integrations = {
           snacks = true,
           treesitter_context = true,
           gitsigns = true,
