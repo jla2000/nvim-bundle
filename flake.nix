@@ -28,7 +28,11 @@
           vimAlias = true;
           viAlias = true;
         };
-        neovim = neovim-unstable;
+        neovim = pkgs.wrapNeovimUnstable neovim-unstable {
+          wrapRc = false;
+          vimAlias = true;
+          viAlias = true;
+        };
       };
     };
 }
