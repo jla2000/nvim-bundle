@@ -12,11 +12,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
     local client = vim.lsp.get_client_by_id(args.data.client_id)
     if client and client.name == "rust_analyzer" then
       vim.fn.matchadd("ErrorMsg", "\\<SAFETY\\ze:")
-
-      local error = vim.api.nvim_get_hl(0, { name = "ErrorMsg" })
-      vim.api.nvim_set_hl(0, "@lsp.typemod.operator.unsafe.rust", { underline = true, sp = error.fg })
-      vim.api.nvim_set_hl(0, "@lsp.typemod.function.unsafe.rust", { underline = true, sp = error.fg })
-      vim.api.nvim_set_hl(0, "@lsp.typemod.method.unsafe.rust", { underline = true, sp = error.fg })
+      vim.api.nvim_set_hl(0, "@lsp.typemod.operator.unsafe.rust", { link = "ErrorMsg" })
+      vim.api.nvim_set_hl(0, "@lsp.typemod.function.unsafe.rust", { link = "ErrorMsg" })
+      vim.api.nvim_set_hl(0, "@lsp.typemod.method.unsafe.rust", { link = "ErrorMsg" })
     end
   end,
 })
