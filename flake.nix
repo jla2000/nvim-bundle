@@ -25,6 +25,8 @@
             vim.opt.rtp:prepend("${./nvim}")
             dofile("${./nvim/init.lua}")
           '';
+          vimAlias = true;
+          viAlias = true;
         };
         neovim = neovim-unstable;
       };
