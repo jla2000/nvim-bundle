@@ -12,6 +12,7 @@ vim.api.nvim_create_autocmd("PackChanged", {
 })
 
 vim.pack.add({
+  "https://github.com/KijitoraFinch/nanode.nvim",
   "https://github.com/2KAbhishek/nerdy.nvim",
   "https://github.com/MeanderingProgrammer/render-markdown.nvim",
   "https://github.com/Wansmer/symbol-usage.nvim",
@@ -51,4 +52,4 @@ vim.cmd.packadd("nvim-web-devicons")
 
 require("lz.n").load("plugins")
 
-vim.cmd.colorscheme("catppuccin-macchiato")
+vim.cmd.colorscheme("nanode")

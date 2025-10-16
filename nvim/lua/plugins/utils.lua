@@ -90,7 +90,11 @@ return {
   },
   {
     "catppuccin-nvim",
-    colorscheme = { "catppuccin", "catppuccin-macchiato" },
+    colorscheme = {
+      "catppuccin",
+      "catppuccin-mocha",
+      "catppuccin-macchiato",
+    },
     after = function()
       require("catppuccin").setup({
         lsp_styles = {
@@ -155,5 +159,9 @@ return {
         copy_to_clipboard = true,
       })
     end,
+  },
+  {
+    "nanode.nvim",
+    colorscheme = "nanode",
   },
 }
