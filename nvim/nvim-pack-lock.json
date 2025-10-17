@@ -38,7 +38,7 @@
       "src": "https://github.com/folke/flash.nvim"
     },
     "fzf-lua": {
-      "rev": "83e4080",
+      "rev": "db45bab",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
@@ -57,8 +57,12 @@
       "rev": "7419497",
       "src": "https://github.com/lumen-oss/lz.n"
     },
+    "nanode.nvim": {
+      "rev": "cd85bbb",
+      "src": "https://github.com/KijitoraFinch/nanode.nvim"
+    },
     "nerdy.nvim": {
-      "rev": "a8e3f70",
+      "rev": "f6ba335",
       "src": "https://github.com/2KAbhishek/nerdy.nvim"
     },
     "nvim-autopairs": {
@@ -94,7 +98,7 @@
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "oil.nvim": {
-      "rev": "200df01",
+      "rev": "7194872",
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "persistence.nvim": {
@@ -102,7 +106,7 @@
       "src": "https://github.com/folke/persistence.nvim"
     },
     "render-markdown.nvim": {
-      "rev": "691651d",
+      "rev": "475d3ad",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "snacks.nvim": {

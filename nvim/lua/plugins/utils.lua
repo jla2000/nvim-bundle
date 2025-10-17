@@ -115,7 +115,7 @@ return {
     end,
   },
   {
-    "everforest",
+    "everforest-nvim",
     colorscheme = "everforest",
   },
   {
