@@ -17,4 +17,4 @@ jobs:
       - uses: DeterminateSystems/flake-checker-action@main
 
       - name: Build neovim
-        run: nix build .#neovim
+        run: nix build .#neovim-bundle
