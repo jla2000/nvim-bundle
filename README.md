@@ -16,19 +16,18 @@ nix run --extra-experimental-features "nix-command flakes" github:jla2000/nvim-b
 
 [Nix](https://nixos.org/) is used to build this project.
 
-Alternatively, you can also download an `AppImage` from the artifacts of the latest CI run.
-
 ## Installation
 
-Include `nvim-bundle.packages.x86_64-linux.neovim` into nixos/home-manager config.
+Include `nvim-bundle.packages.x86_64-linux.neovim-bundle` into nixos/home-manager config.
 
 ## Installation (Dev-mode with symlinked lua config)
 
-Example (configPath needs to be adapted) that can be included into [home-manager](https://github.com/nix-community/home-manager) config.
+Include `nvim-bundle.packages.x86_64-linux.neovim` into nixos/home-manager config.
 
-```nix
-imports = [ nvim-bundle.homeManagerModules.neovim ];
-neovim.configPath = "/home/jlafferton/dev/nvim-bundle/nvim";
+Symlink config:
+
+```bash
+ln -s $(realpath ./nvim) ~/.config/nvim
 ```
 
 ## Features

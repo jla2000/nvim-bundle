@@ -19,7 +19,7 @@
       };
     in
     {
-      packages.${system} = {
+      packages.${system} = rec {
         neovim-bundle = pkgs.wrapNeovimUnstable neovim-unstable {
           luaRcContent = ''
             vim.opt.rtp:prepend("${./nvim}")
@@ -33,6 +33,7 @@
           vimAlias = true;
           viAlias = true;
         };
+        default = neovim-bundle;
       };
     };
 }
