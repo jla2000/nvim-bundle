@@ -160,8 +160,11 @@ return {
       })
     end,
   },
-  {
-    "nanode.nvim",
-    colorscheme = "nanode",
-  },
+  { "nanode.nvim", colorscheme = "nanode" },
+  { "thorn.nvim", colorscheme = "thorn" },
+  { "conifer.nvim", colorscheme = "thorn" },
+  { "y9nika.nvim", colorscheme = "y9nika" },
+  { "lackluster.nvim", colorscheme = "lackluster" },
+  { "rose-pine", colorscheme = "rose-pine" },
+  { "tokyodark.nvim", colorscheme = "tokyodark" },
 }

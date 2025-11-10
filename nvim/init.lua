@@ -12,8 +12,8 @@ vim.api.nvim_create_autocmd("PackChanged", {
 })
 
 vim.pack.add({
-  "https://github.com/KijitoraFinch/nanode.nvim",
   "https://github.com/2KAbhishek/nerdy.nvim",
+  "https://github.com/KijitoraFinch/nanode.nvim",
   "https://github.com/MeanderingProgrammer/render-markdown.nvim",
   "https://github.com/Wansmer/symbol-usage.nvim",
   "https://github.com/christoomey/vim-tmux-navigator",
@@ -26,10 +26,14 @@ vim.pack.add({
   "https://github.com/folke/which-key.nvim",
   "https://github.com/ibhagwan/fzf-lua",
   "https://github.com/j-hui/fidget.nvim",
+  "https://github.com/jpwol/thorn.nvim",
   "https://github.com/kylechui/nvim-surround",
+  "https://github.com/kyza0d/xeno.nvim",
   "https://github.com/lewis6991/gitsigns.nvim",
+  "https://github.com/lucasadelino/conifer.nvim",
   "https://github.com/lumen-oss/lz.n",
   "https://github.com/mfussenegger/nvim-lint",
+  "https://github.com/mrcjkb/rustaceanvim",
   "https://github.com/neanias/everforest-nvim",
   "https://github.com/neovim/nvim-lspconfig",
   "https://github.com/nvim-tree/nvim-web-devicons",
@@ -39,11 +43,15 @@ vim.pack.add({
   "https://github.com/saecki/crates.nvim",
   "https://github.com/saecki/live-rename.nvim",
   "https://github.com/sindrets/diffview.nvim",
+  "https://github.com/slugbyte/lackluster.nvim",
   "https://github.com/stevearc/conform.nvim",
   "https://github.com/stevearc/oil.nvim",
+  "https://github.com/tiagovla/tokyodark.nvim",
   "https://github.com/windwp/nvim-autopairs",
+  "https://github.com/y9san9/y9nika.nvim",
   { src = "https://github.com/Saghen/blink.cmp", version = "v1.7.0" },
   { src = "https://github.com/catppuccin/nvim", name = "catppuccin-nvim" },
+  { src = "https://github.com/rose-pine/neovim", name = "rose-pine" },
 }, { load = function() end })
 
 vim.cmd.packadd("lz.n")
@@ -52,4 +60,4 @@ vim.cmd.packadd("nvim-web-devicons")
 
 require("lz.n").load("plugins")
 
-vim.cmd.colorscheme("everforest")
+vim.cmd.colorscheme("catppuccin-mocha")

@@ -24,31 +24,6 @@ return {
     "nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     after = function()
-      vim.lsp.config("rust_analyzer", {
-        settings = {
-          ["rust-analyzer"] = {
-            cargo = {
-              allFeatures = true,
-              buildScripts = { enable = true },
-              loadOutDirsFromCheck = true,
-            },
-            check = {
-              command = "clippy",
-              extraArgs = { "--no-deps" },
-            },
-            checkOnSave = true,
-            files = {
-              excludeDirs = {
-                ".direnv",
-                ".git",
-                ".jj",
-                "target",
-              },
-            },
-          },
-        },
-      })
-
       vim.lsp.config("zuban", {
         cmd = { "zuban", "server" },
         filetypes = { "python" },
@@ -67,7 +42,6 @@ return {
       vim.lsp.enable("zuban")
       vim.lsp.enable("zls")
       vim.lsp.enable("clangd")
-      vim.lsp.enable("rust_analyzer")
     end,
   },
   { "nvim-lint", event = { "BufReadPre" } },
@@ -151,4 +125,8 @@ return {
       })
     end,
   },
+  {
+    "rustaceanvim",
+    event = "VimEnter",
+  }
 }
