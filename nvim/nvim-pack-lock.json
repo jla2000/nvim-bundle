@@ -6,12 +6,16 @@
       "version": "'v1.7.0'"
     },
     "catppuccin-nvim": {
-      "rev": "e79d09f",
+      "rev": "234fc04",
       "src": "https://github.com/catppuccin/nvim"
     },
     "conform.nvim": {
-      "rev": "fbcb4fa",
+      "rev": "cde4da5",
       "src": "https://github.com/stevearc/conform.nvim"
+    },
+    "conifer.nvim": {
+      "rev": "46bde1c",
+      "src": "https://github.com/lucasadelino/conifer.nvim"
     },
     "crates.nvim": {
       "rev": "ac9fa49",
@@ -22,31 +26,35 @@
       "src": "https://github.com/sindrets/diffview.nvim"
     },
     "everforest-nvim": {
-      "rev": "d293618",
+      "rev": "557bce9",
       "src": "https://github.com/neanias/everforest-nvim"
     },
     "fff.nvim": {
-      "rev": "2df0628",
+      "rev": "65aeacf",
       "src": "https://github.com/dmtrKovalenko/fff.nvim"
     },
     "fidget.nvim": {
-      "rev": "3f54759",
+      "rev": "e32b672",
       "src": "https://github.com/j-hui/fidget.nvim"
     },
     "flash.nvim": {
-      "rev": "b68bda0",
+      "rev": "fcea7ff",
       "src": "https://github.com/folke/flash.nvim"
     },
     "fzf-lua": {
-      "rev": "db45bab",
+      "rev": "996b236",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
-      "rev": "1ee5c1f",
+      "rev": "20ad441",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
+    "lackluster.nvim": {
+      "rev": "70dd682",
+      "src": "https://github.com/slugbyte/lackluster.nvim"
+    },
     "lazydev.nvim": {
-      "rev": "258d2a5",
+      "rev": "5231c62",
       "src": "https://github.com/folke/lazydev.nvim"
     },
     "live-rename.nvim": {
@@ -54,7 +62,7 @@
       "src": "https://github.com/saecki/live-rename.nvim"
     },
     "lz.n": {
-      "rev": "7419497",
+      "rev": "399916a",
       "src": "https://github.com/lumen-oss/lz.n"
     },
     "nanode.nvim": {
@@ -70,15 +78,15 @@
       "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-lint": {
-      "rev": "9da1fb9",
+      "rev": "8b349e8",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "e688b48",
+      "rev": "c8503e6",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-surround": {
-      "rev": "75de178",
+      "rev": "fcfa7e0",
       "src": "https://github.com/kylechui/nvim-surround"
     },
     "nvim-treesitter": {
@@ -86,39 +94,43 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-treesitter-context": {
-      "rev": "41847d3",
+      "rev": "660861b",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-context"
     },
     "nvim-treesitter-textobjects": {
-      "rev": "71385f1",
+      "rev": "5ca4aaa",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
     },
     "nvim-web-devicons": {
-      "rev": "b8221e4",
+      "rev": "8dcb311",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "oil.nvim": {
-      "rev": "7194872",
+      "rev": "7e1cd77",
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "persistence.nvim": {
-      "rev": "166a79a",
+      "rev": "b20b2a7",
       "src": "https://github.com/folke/persistence.nvim"
     },
     "render-markdown.nvim": {
-      "rev": "475d3ad",
+      "rev": "f58c05f",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "snacks.nvim": {
-      "rev": "454ba02",
+      "rev": "dec29f5",
       "src": "https://github.com/folke/snacks.nvim"
     },
     "symbol-usage.nvim": {
       "rev": "e07c07d",
       "src": "https://github.com/Wansmer/symbol-usage.nvim"
     },
+    "thorn.nvim": {
+      "rev": "16599d0",
+      "src": "https://github.com/jpwol/thorn.nvim"
+    },
     "tokyonight.nvim": {
-      "rev": "4d15961",
+      "rev": "5da1b76",
       "src": "https://github.com/folke/tokyonight.nvim"
     },
     "vim-tmux-navigator": {
@@ -126,8 +138,16 @@
       "src": "https://github.com/christoomey/vim-tmux-navigator"
     },
     "which-key.nvim": {
-      "rev": "904308e",
+      "rev": "3aab214",
       "src": "https://github.com/folke/which-key.nvim"
+    },
+    "xeno.nvim": {
+      "rev": "f70c224",
+      "src": "https://github.com/kyza0d/xeno.nvim"
+    },
+    "y9nika.nvim": {
+      "rev": "e25b944",
+      "src": "https://github.com/y9san9/y9nika.nvim"
     }
   }
 }

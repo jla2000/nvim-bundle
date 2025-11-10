@@ -52,4 +52,4 @@ vim.cmd.packadd("nvim-web-devicons")
 
 require("lz.n").load("plugins")
 
-vim.cmd.colorscheme("nanode")
+vim.cmd.colorscheme("everforest")
