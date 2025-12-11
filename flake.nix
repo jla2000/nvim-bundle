@@ -20,7 +20,7 @@
         };
       in
       {
-        packages.${system} = rec {
+        packages = rec {
           neovim-bundle = pkgs.wrapNeovimUnstable neovim-unstable {
             luaRcContent = ''
               vim.opt.rtp:prepend("${./nvim}")

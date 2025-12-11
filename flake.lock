@@ -7,15 +7,15 @@
       "locked": {
         "lastModified": 1731533236,
         "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
-        "ref": "refs/heads/main",
+        "owner": "numtide",
+        "repo": "flake-utils",
         "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
-        "revCount": 102,
-        "type": "git",
-        "url": "https://gitlab.vi.vector.int/common/third-party/flake-utils"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "https://gitlab.vi.vector.int/common/third-party/flake-utils"
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
       }
     },
     "neovim": {
