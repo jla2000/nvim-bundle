@@ -34,6 +34,7 @@ vim.pack.add({
   "https://github.com/lumen-oss/lz.n",
   "https://github.com/mfussenegger/nvim-lint",
   "https://github.com/mrcjkb/rustaceanvim",
+  "https://github.com/navarasu/onedark.nvim",
   "https://github.com/neanias/everforest-nvim",
   "https://github.com/neovim/nvim-lspconfig",
   "https://github.com/nvim-tree/nvim-web-devicons",
@@ -60,4 +61,4 @@ vim.cmd.packadd("nvim-web-devicons")
 
 require("lz.n").load("plugins")
 
-vim.cmd.colorscheme("catppuccin-mocha")
+vim.cmd.colorscheme("rose-pine")

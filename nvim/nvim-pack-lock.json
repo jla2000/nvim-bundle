@@ -30,7 +30,7 @@
       "src": "https://github.com/neanias/everforest-nvim"
     },
     "fff.nvim": {
-      "rev": "65aeacf",
+      "rev": "2c55114048cf560d281c4d77b152dc68789ee73a",
       "src": "https://github.com/dmtrKovalenko/fff.nvim"
     },
     "fidget.nvim": {
@@ -42,7 +42,7 @@
       "src": "https://github.com/folke/flash.nvim"
     },
     "fzf-lua": {
-      "rev": "f6d949549cc43fb5d35ef43db56f03131da469a7",
+      "rev": "de0fd4a21ee29cf6532d0c3bcae08a0b25d99b6a",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
@@ -74,11 +74,11 @@
       "src": "https://github.com/2KAbhishek/nerdy.nvim"
     },
     "nvim-autopairs": {
-      "rev": "23320e7",
+      "rev": "d9e44e54384e5b0f3536339c65484f2e41b528e3",
       "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-lint": {
-      "rev": "5122c0c00a65cf6ce434b16b6a7587b62b6af00d",
+      "rev": "54c5f839f8b3e3e69afbf2e074be8ac7e5b793b9",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
@@ -108,6 +108,10 @@
     "oil.nvim": {
       "rev": "cbcb3f997f6f261c577b943ec94e4ef55108dd95",
       "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "onedark.nvim": {
+      "rev": "213c23ae45a04797572242568d5d51937181792d",
+      "src": "https://github.com/navarasu/onedark.nvim"
     },
     "persistence.nvim": {
       "rev": "b20b2a7",

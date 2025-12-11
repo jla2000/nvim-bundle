@@ -44,7 +44,7 @@ return {
       vim.lsp.enable("clangd")
     end,
   },
-  { "nvim-lint", event = { "BufReadPre" } },
+  -- { "nvim-lint", event = { "BufReadPre" } },
   {
     "live-rename.nvim",
     keys = {
@@ -128,5 +128,5 @@ return {
   {
     "rustaceanvim",
     event = "VimEnter",
-  }
+  },
 }

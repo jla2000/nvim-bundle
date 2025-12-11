@@ -165,6 +165,15 @@ return {
   { "conifer.nvim", colorscheme = "thorn" },
   { "y9nika.nvim", colorscheme = "y9nika" },
   { "lackluster.nvim", colorscheme = "lackluster" },
-  { "rose-pine", colorscheme = "rose-pine" },
+  {
+    "rose-pine",
+    colorscheme = "rose-pine",
+    after = function()
+      require("rose-pine").setup({
+        styles = { transparency = true },
+      })
+    end,
+  },
   { "tokyodark.nvim", colorscheme = "tokyodark" },
+  { "onedark.nvim", colorscheme = "onedark" },
 }

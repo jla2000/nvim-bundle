@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    flake-utils.url = "git+https://gitlab.vi.vector.int/common/third-party/flake-utils";
+    flake-utils.url = "github:numtide/flake-utils";
     neovim = {
       url = "github:neovim/neovim";
       flake = false;
