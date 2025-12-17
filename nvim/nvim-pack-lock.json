@@ -129,6 +129,10 @@
       "rev": "6c3785d6a230bec63f70c98bf8e2842bed924245",
       "src": "https://github.com/mrcjkb/rustaceanvim"
     },
+    "sidekick.nvim": {
+      "rev": "c2bdf8cfcd87a6be5f8b84322c1b5052e78e302e",
+      "src": "https://github.com/folke/sidekick.nvim"
+    },
     "snacks.nvim": {
       "rev": "fe7cfe9800a182274d0f868a74b7263b8c0c020b",
       "src": "https://github.com/folke/snacks.nvim"

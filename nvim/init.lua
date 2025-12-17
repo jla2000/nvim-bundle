@@ -21,6 +21,7 @@ vim.pack.add({
   "https://github.com/folke/flash.nvim",
   "https://github.com/folke/lazydev.nvim",
   "https://github.com/folke/persistence.nvim",
+  "https://github.com/folke/sidekick.nvim",
   "https://github.com/folke/snacks.nvim",
   "https://github.com/folke/tokyonight.nvim",
   "https://github.com/folke/which-key.nvim",
@@ -61,4 +62,4 @@ vim.cmd.packadd("nvim-web-devicons")
 
 require("lz.n").load("plugins")
 
-vim.cmd.colorscheme("rose-pine")
+vim.cmd.colorscheme("catppuccin-mocha")

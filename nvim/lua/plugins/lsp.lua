@@ -37,6 +37,7 @@ return {
         },
       })
 
+      vim.lsp.enable("copilot")
       vim.lsp.enable("lua_ls")
       vim.lsp.enable("nixd")
       vim.lsp.enable("zuban")
