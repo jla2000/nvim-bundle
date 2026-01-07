@@ -166,6 +166,7 @@ return {
     after = function()
       require("sidekick").setup({
         cli = { mux = { backend = "tmux", enabled = true } },
+        nes = { enabled = false },
       })
     end,
     keys = {
