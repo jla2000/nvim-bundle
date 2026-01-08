@@ -15,9 +15,11 @@ vim.pack.add({
   "https://github.com/2KAbhishek/nerdy.nvim",
   "https://github.com/KijitoraFinch/nanode.nvim",
   "https://github.com/MeanderingProgrammer/render-markdown.nvim",
+  "https://github.com/MunifTanjim/nui.nvim",
   "https://github.com/Wansmer/symbol-usage.nvim",
   "https://github.com/christoomey/vim-tmux-navigator",
   "https://github.com/dmtrKovalenko/fff.nvim",
+  "https://github.com/esmuellert/codediff.nvim",
   "https://github.com/folke/flash.nvim",
   "https://github.com/folke/lazydev.nvim",
   "https://github.com/folke/persistence.nvim",
@@ -34,7 +36,6 @@ vim.pack.add({
   "https://github.com/lucasadelino/conifer.nvim",
   "https://github.com/lumen-oss/lz.n",
   "https://github.com/mfussenegger/nvim-lint",
-  "https://github.com/mrcjkb/rustaceanvim",
   "https://github.com/navarasu/onedark.nvim",
   "https://github.com/neanias/everforest-nvim",
   "https://github.com/neovim/nvim-lspconfig",
@@ -42,9 +43,10 @@ vim.pack.add({
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/nvim-treesitter/nvim-treesitter-context",
   "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
+  "https://github.com/oskarnurm/koda.nvim",
   "https://github.com/saecki/crates.nvim",
   "https://github.com/saecki/live-rename.nvim",
-  "https://github.com/sindrets/diffview.nvim",
+  "https://github.com/serhez/bento.nvim",
   "https://github.com/slugbyte/lackluster.nvim",
   "https://github.com/stevearc/conform.nvim",
   "https://github.com/stevearc/oil.nvim",
@@ -59,6 +61,7 @@ vim.pack.add({
 vim.cmd.packadd("lz.n")
 vim.cmd.packadd("nvim-treesitter")
 vim.cmd.packadd("nvim-web-devicons")
+vim.cmd.packadd("nui.nvim")
 
 require("lz.n").load("plugins")
 

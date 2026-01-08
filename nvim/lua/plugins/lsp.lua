@@ -37,15 +37,39 @@ return {
         },
       })
 
+      vim.lsp.config("rust_analyzer", {
+        settings = {
+          ["rust-analyzer"] = {
+            check = {
+              command = "clippy",
+              extraArgs = { "--no-deps" },
+            },
+            cargo = {
+              features = "all",
+            },
+            checkOnSave = true,
+            files = {
+              excludeDirs = {
+                ".direnv",
+                ".git",
+                ".jj",
+                "target",
+              },
+            },
+          },
+        },
+      })
+
       vim.lsp.enable("copilot")
       vim.lsp.enable("lua_ls")
       vim.lsp.enable("nixd")
       vim.lsp.enable("zuban")
       vim.lsp.enable("zls")
       vim.lsp.enable("clangd")
+      vim.lsp.enable("rust_analyzer")
     end,
   },
-  -- { "nvim-lint", event = { "BufReadPre" } },
+  { "nvim-lint", event = { "BufReadPre" } },
   {
     "live-rename.nvim",
     keys = {
@@ -125,9 +149,5 @@ return {
         vt_position = "end_of_line",
       })
     end,
-  },
-  {
-    "rustaceanvim",
-    event = "VimEnter",
   },
 }

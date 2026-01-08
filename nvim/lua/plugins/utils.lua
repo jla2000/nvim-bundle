@@ -123,31 +123,11 @@ return {
     colorscheme = { "tokyonight", "tokyonight-storm" },
   },
   {
-    "diffview.nvim",
-    cmd = "DiffviewOpen",
-    opts = {},
-    keys = {
-      {
-        "<leader>vv",
-        function()
-          if next(require("diffview.lib").views) == nil then
-            vim.cmd("DiffviewOpen")
-          else
-            vim.cmd("DiffviewClose")
-          end
-        end,
-      },
-      {
-        "<leader>vm",
-        function()
-          if next(require("diffview.lib").views) == nil then
-            vim.cmd("DiffviewOpen HEAD..main")
-          else
-            vim.cmd("DiffviewClose")
-          end
-        end,
-      },
-    },
+    "codediff.nvim",
+    cmd = "CodeDiff",
+    after = function()
+      require("codediff").setup()
+    end,
   },
   {
     "nerdy.nvim",
@@ -258,6 +238,7 @@ return {
   { "conifer.nvim", colorscheme = "thorn" },
   { "y9nika.nvim", colorscheme = "y9nika" },
   { "lackluster.nvim", colorscheme = "lackluster" },
+  { "koda.nvim", colorscheme = "koda" },
   {
     "rose-pine",
     colorscheme = "rose-pine",
